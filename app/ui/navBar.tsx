@@ -38,6 +38,9 @@ export default function NavBar(){
     const [navOpen, setNavOpen] = useState(false);
     const toggleNav = () => setNavOpen(!navOpen);
 
+    const [isLogin, setIsLogin] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return (
         <div className="relative">
             <nav className="">
@@ -91,25 +94,39 @@ export default function NavBar(){
                                 </Link>
                             </div>
                         </div>
-                        <div className="flex gap-6">
-                            <button className="text-[#616161] hidden md:flex items-center justify-center bg-[#F6F6F6] rounded-full w-12 h-12">
-                                <ShoppingCartIcon className="w-6 h-6" />
-                            </button>
-                            <button className="text-[#616161] hidden md:flex items-center justify-center bg-[#F6F6F6] rounded-full w-12 h-12">
-                                <HeartIcon className="w-6 h-6" />
-                            </button>
+                        {isLogin ? (
+                            <div className="relative flex gap-6">
+                                <button className="text-[#616161] hidden md:flex items-center justify-center bg-[#F6F6F6] rounded-full w-12 h-12">
+                                    <ShoppingCartIcon className="w-6 h-6" />
+                                </button>
+                                <button className="text-[#616161] hidden md:flex items-center justify-center bg-[#F6F6F6] rounded-full w-12 h-12">
+                                    <HeartIcon className="w-6 h-6" />
+                                </button>
+                                
+                                <button onClick={() => setMenuOpen(!menuOpen)}
+                                    className="text-[#616161] hidden md:flex justify-center items-center gap-2">
+                                    <div className="bg-black rounded-full w-12 h-12"></div>
+                                    <ChevronDownIcon className="w-4 h-4" />
+                                </button>
 
-                            <button className="text-[#616161] hidden md:flex justify-center items-center gap-2">
-                                <div className="bg-black rounded-full w-12 h-12"></div>
-                                <ChevronDownIcon className="w-4 h-4" />
-                            </button>
+                                {menuOpen && (
+                                    <div className="absolute bg-white p-5 w-56 top-14 z-10 right-0">
+                                        <button onClick={() => setIsLogin(false)}
+                                            className="flex justify-center items-center gap-3 bg-primary text-white rounded-lg p-4 w-auto h-12">
+                                            Logout
+                                            <ArrowRightIcon className="w-4 h-4" />
+                                        </button>
+                                    </div>
+                                )}   
 
-                            {/* <button className="flex justify-center items-center gap-3 bg-primary text-white rounded-lg p-4 w-auto h-12">
-                                Logout
+                            </div>
+                        ) : (
+                            <button onClick={() => setIsLogin(true)}
+                                className="hidden md:flex justify-center items-center gap-3 bg-primary text-white rounded-lg p-4 w-auto h-12">
+                                Login
                                 <ArrowRightIcon className="w-4 h-4" />
-                            </button> */}
-                        </div>
-                        
+                            </button>
+                        )}               
                         <div className="md:hidden flex items-center">
                         <button
                                 className="inline-flex items-center justify-center p-2 rounded-md text-black md:text-black
@@ -130,10 +147,12 @@ export default function NavBar(){
                 </div>
                 {navOpen && (
                     <div className="bg-white w-[80%] md:hidden absolute z-20 top-0 right-0 p-3">
-                        <div className="flex items-center gap-3 mx-2 my-4">
-                            <div className="bg-black rounded-full w-10 h-10"></div>
-                            <h1 className="font-bold text-lg">Ibrahim Michael</h1>
-                        </div>
+                        {isLogin && (
+                            <div className="flex items-center gap-3 mx-2 my-4">
+                                <div className="bg-black rounded-full w-10 h-10"></div>
+                                <h1 className="font-bold text-lg">Ibrahim Michael</h1>
+                            </div>
+                        )}
                         <div className="grid gap-5 px-2 pt-2 pb-3 space-y-1 sm:px-3">
                             <Link href="/" className={clsx("flex justify-between text-[#616161]"
                                 ,{
@@ -182,38 +201,50 @@ export default function NavBar(){
                                 </div>
                                 <ChevronRightIcon className="w-4 h-4" />
                             </Link>
-                            <Link href="#" className={`flex justify-between 
-                                ${pathname === '/order'? 'text-primary' : 'text-[#616161]'}`
-                                }>
-                                <div className="flex gap-2">
-                                    <ShoppingCartIcon className="h-6 w-6" />
-                                    Order
-                                </div>
-                                <ChevronRightIcon className="w-4 h-4" />
-                            </Link>
-                            <Link href="#" className={`flex justify-between 
-                                ${pathname === '/account'? 'text-primary' : 'text-[#616161]'}`
-                                }>
-                                <div className="flex gap-2">
-                                    <UserIcon className="h-6 w-6" />
-                                    Acount
-                                </div>
-                                <ChevronRightIcon className="w-4 h-4" />
-                            </Link>
-                            <Link href="#" className={`flex justify-between 
-                                ${pathname === '/saved'? 'text-primary' : 'text-[#616161]'}`
-                                }>
-                                <div className="flex gap-2">
-                                    <HeartIcon className="h-6 w-6" />
-                                    Saved Items
-                                </div>
-                                <ChevronRightIcon className="w-4 h-4" />
-                            </Link>
 
-                            <button className="flex justify-center items-center gap-3 bg-primary text-white rounded-lg p-2 w-auto h-12">
-                                Logout
-                                <ArrowRightIcon className="w-4 h-4" />
-                            </button>
+                            {isLogin ? (
+                                <>
+                                    <Link href="#" className={`flex justify-between 
+                                        ${pathname === '/order'? 'text-primary' : 'text-[#616161]'}`
+                                        }>
+                                        <div className="flex gap-2">
+                                            <ShoppingCartIcon className="h-6 w-6" />
+                                            Order
+                                        </div>
+                                        <ChevronRightIcon className="w-4 h-4" />
+                                    </Link>
+                                    <Link href="#" className={`flex justify-between 
+                                        ${pathname === '/account'? 'text-primary' : 'text-[#616161]'}`
+                                        }>
+                                        <div className="flex gap-2">
+                                            <UserIcon className="h-6 w-6" />
+                                            Acount
+                                        </div>
+                                        <ChevronRightIcon className="w-4 h-4" />
+                                    </Link>
+                                    <Link href="#" className={`flex justify-between 
+                                        ${pathname === '/saved'? 'text-primary' : 'text-[#616161]'}`
+                                        }>
+                                        <div className="flex gap-2">
+                                            <HeartIcon className="h-6 w-6" />
+                                            Saved Items
+                                        </div>
+                                        <ChevronRightIcon className="w-4 h-4" />
+                                    </Link>
+                                    <button onClick={() => setIsLogin(false)}
+                                        className="flex justify-center items-center gap-3 bg-primary text-white rounded-lg p-2 w-auto h-12">
+                                            Logout
+                                            <ArrowRightIcon className="w-4 h-4" />
+                                    </button>
+                                </>
+                                
+                            ): (
+                                <button onClick={() => setIsLogin(true)}
+                                    className="flex justify-center items-center gap-3 bg-primary text-white rounded-lg p-2 w-auto h-12">
+                                    Login
+                                    <ArrowRightIcon className="w-4 h-4" />
+                                </button>
+                            )}
                         </div>
                     </div>
                 )
