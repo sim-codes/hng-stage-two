@@ -128,7 +128,8 @@ export default function NavBar(){
                             </button>
                         )}               
                         <div className="md:hidden flex items-center">
-                        <button
+
+                            <button
                                 className="inline-flex items-center justify-center p-2 rounded-md text-black md:text-black
                                 focus:outline-none focus:ring-0 focus:ring-inset focus:ring-black"
                                 onClick={toggleNav}
@@ -136,12 +137,18 @@ export default function NavBar(){
                                     {navOpen ? (
                                         <XMarkIcon className="absolute z-30 right-5 h-6 w-6" />
                                     ) : (
-                                        <button className="text-[#616161] flex justify-center items-center gap-2">
-                                            <div className="bg-black rounded-full w-12 h-12"></div>
-                                            <ChevronDownIcon className="w-4 h-4" />
-                                        </button>
+                                        isLogin ? (
+                                            <div className="">
+                                                <button className="text-[#616161] flex justify-center items-center gap-2">
+                                                    <div className="bg-black rounded-full w-12 h-12"></div>
+                                                    <ChevronDownIcon className="w-4 h-4" />
+                                                </button>
+                                            </div>
+                                        ) : (
+                                            <Bars3BottomRightIcon className="h-6 w-6" />
+                                        )
                                     )}
-                                </button>
+                            </button>
                         </div>
                     </div>
                 </div>
