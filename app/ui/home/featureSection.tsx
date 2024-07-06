@@ -1,20 +1,26 @@
 import Image from "next/image"
 import { FeaturedMenu } from "@/app/lib/data"
 import { ShoppingCartIcon, HeartIcon } from "@heroicons/react/24/outline"
-import { StarIcon, TagIcon, ClockIcon } from "@heroicons/react/16/solid"
+import { StarIcon, TagIcon, ClockIcon, ArrowRightIcon } from "@heroicons/react/16/solid"
 import clsx from "clsx"
 
 export default function FeatureSection() {
     return (
-        <section className="self-stretch px-2 md:px-24 lg:px-24 mb-5">
-            <h2 className="font-bold text-2xl">Featured Menu</h2>
+        <section className="self-stretch p-5 md:px-24 lg:px-24 mb-5">
+            <div className="flex justify-between">
+                <h2 className="font-bold text-2xl">Featured Menu</h2>
+                <button className="flex justify-center items-center gap-2 bg-primary rounded-md text-white max-w-40 p-2">
+                    View all
+                    <ArrowRightIcon className="h-4 w-4" />
+                </button>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-4">
                 {FeaturedMenu.map((menu) => (
                     <div key={menu.id} className="flex flex-col gap-2">
-                        <div className="relative w-full h-72 bg-gray-200 rounded-xl flex items-center justify-center 
-                            overflow-hidden object-cover">
-                            <Image src={menu.image} alt="Burger" fill={true} className="z-0" />
+                        <div className="relative w-full h-72 bg-gray-200 rounded-xl flex items-center justify-center
+                            overflow-hidden">
+                            <Image src={menu.image} alt="Burger" fill={true} className="z-0 object-cover" />
 
                             <div className="absolute z-10 top-5 left-5 flex gap-2">
                                 <p className="flex items-center gap-2 justify-center bg-primary text-white font-bold rounded-md p-2">
