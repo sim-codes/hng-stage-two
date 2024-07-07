@@ -39,20 +39,6 @@ export default function HeroSection(){
     return (
         <section className="relative flex flex-col items-center">
             <Carousel slides={slides} />
-            <div className="relative w-screen h-[512px] hidden flex-col justify-center items-center bg-black
-            md:w-[1488px] md:h-[705px] lg:w-[1488px] lg:h-[705px] overflow-hidden sm:rounded-2xl lg:rounded-2xl">
-                <Image src="/heroImage.png" alt="Hero Image" fill={true}
-                    className="z-0 object-cover opacity-30" />
-                <div className="absolute z-10 flex flex-col justify-center items-center md:gap-5 p-12">
-                    <p className="text-white font-bold text-2xl md:text-4xl lg:text-6xl text-center">Craving delicious food?
-                    </p>
-                    <p className="text-white font-bold text-2xl md:text-4xl lg:text-6xl text-center text-wrap">
-                        <span className="text-[#FCD507]">Discover</span> the perfect dish for you
-                    </p>
-                </div>
-            </div>
-
-            
         </section>
     );
 }

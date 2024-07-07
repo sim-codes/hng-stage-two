@@ -16,8 +16,8 @@ export default function Carousel({ slides }: {slides: Array<Slide>}) {
     }, [currentSlide]);
     
     return (
-        <div className="relative w-screen h-[512px] flex-col justify-center items-center
-        bg-black md:w-[1488px] md:h-[705px] lg:w-[1488px] lg:h-[705px] sm:rounded-2xl lg:rounded-2xl">
+        <div className="relative max-w-screen h-[512px] flex-col justify-center items-center
+        bg-black md:w-[1488px] md:h-[705px] lg:w-[1488px] lg:h-[705px] sm:rounded-2xl lg:rounded-2xl overflow-hidden">
             {slides.map((slide, index) => (
                 <div
                 key={index}
@@ -34,11 +34,11 @@ export default function Carousel({ slides }: {slides: Array<Slide>}) {
                     </div>
                 </div>
             ))}
-            <div className="absolute bottom-0 left-0 right-0 flex justify-center mb-4">
+            <div className="absolute bottom-5 left-0 right-0 flex justify-center mb-4">
                 {slides.map((_, index) => (
                 <button
                     key={index}
-                    className={`w-3 h-3 mx-2 rounded-full ${
+                    className={`w-4 h-4 mx-2 rounded-full ${
                     index === currentSlide ? 'bg-[#FCD507]' : 'bg-white'
                     }`}
                     onClick={() => setCurrentSlide(index)}
@@ -47,11 +47,11 @@ export default function Carousel({ slides }: {slides: Array<Slide>}) {
             </div>
 
             <button onClick={() => setCurrentSlide(currentSlide - 1 < 0 ? slides.length - 1 : currentSlide - 1)}
-            className="absolute hidden bg-white top-1/2 -left-8 rounded-full p-3 md:block lg:block">
+                className="absolute hidden bg-white top-1/2 left-8 rounded-full p-3 md:block lg:block">
                 <ArrowLeftIcon className="h-8 w-8" />
             </button>
             <button onClick={() => setCurrentSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1)}
-            className="absolute hidden bg-[#FCD507] top-1/2 -right-8 rounded-full p-3 md:block lg:block">
+            className="absolute hidden bg-[#FCD507] top-1/2 right-8 rounded-full p-3 md:block lg:block">
                 <ArrowRightIcon className="h-8 w-8 text-white" />
             </button>
         </div>
