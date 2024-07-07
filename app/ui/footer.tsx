@@ -105,8 +105,8 @@ export  default function Footer(){
                             <li>Onisha</li>
                         </ul>
                     </div>
-
-                    <div className="flex flex-col gap-5 sm:col-span-2">
+                
+                    <div className="flex flex-col gap-5 col-span-2 lg:col-span-1 md:col-span-1">
                         <h3 className="font-bold text-lg">Contacts</h3>
 
                         <div className="flex gap-3">
