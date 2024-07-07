@@ -18,8 +18,8 @@ const links = {
         href: "#",
         label: "About"
     },
-    products: {
-        href: "#",
+    meals: {
+        href: "/meals",
         label: "Products"
     },
     offers: {
@@ -68,9 +68,9 @@ export default function NavBar(){
                                         )}
                                     >About
                                 </Link>
-                                <Link href="#" className={clsx("text-[#616161] flex justify-center items-center gap-2"
+                                <Link href="/meals" className={clsx("text-[#616161] flex justify-center items-center gap-2"
                                     ,{
-                                        "text-primary": pathname === links.products.href
+                                        "text-primary": pathname === links.meals.href
                                     }
                                     )}
                                     >Meals
@@ -96,9 +96,9 @@ export default function NavBar(){
                         </div>
                         {isLogin ? (
                             <div className="relative flex gap-6">
-                                <button className="text-[#616161] hidden md:flex items-center justify-center bg-[#F6F6F6] rounded-full w-12 h-12">
+                                <Link href="/cart" className="text-[#616161] hidden md:flex items-center justify-center bg-[#F6F6F6] rounded-full w-12 h-12">
                                     <ShoppingCartIcon className="w-6 h-6" />
-                                </button>
+                                </Link>
                                 <button className="text-[#616161] hidden md:flex items-center justify-center bg-[#F6F6F6] rounded-full w-12 h-12">
                                     <HeartIcon className="w-6 h-6" />
                                 </button>
@@ -168,7 +168,7 @@ export default function NavBar(){
                             </div>
                         )}
                         <div className="grid gap-5 px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            <Link href="/" className={clsx("flex justify-between text-[#616161]"
+                            <Link href="/" className={clsx("mt-8 flex justify-between text-[#616161]"
                                 ,{
                                     "text-primary": pathname === links.home.href
                                 }
@@ -189,7 +189,7 @@ export default function NavBar(){
                                 <ChevronRightIcon className="w-4 h-4" />
                             </Link>
                             <Link href="#" className={`flex justify-between 
-                                ${pathname === '/meal'? 'text-primary' : 'text-[#616161]'}`
+                                ${pathname === '/meals'? 'text-primary' : 'text-[#616161]'}`
                                 }>
                                 <div className="flex gap-2">
                                     <UsersIcon className="h-6 w-6" />
@@ -218,7 +218,7 @@ export default function NavBar(){
 
                             {isLogin ? (
                                 <>
-                                    <Link href="#" className={`flex justify-between 
+                                    <Link href="/cart" className={`flex justify-between 
                                         ${pathname === '/order'? 'text-primary' : 'text-[#616161]'}`
                                         }>
                                         <div className="flex gap-2">

@@ -4,6 +4,7 @@ import { StarIcon as StarIconOutline } from "@heroicons/react/24/outline";
 import HeroSection from "./ui/home/heroSection";
 import FeatureSection from "./ui/home/featureSection";
 import SearchSection from "./ui/home/searchSection";
+import AdCarousel from "./ui/home/adCarousel";
 
 import footTopImage from "@/public/images/footerTop.png";
 import how1Icon from "@/public/icons/how1.png";
@@ -83,24 +84,7 @@ export default function Home() {
       </div>
 
       {/* Sandwich Ad */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 md:p-24 lg:p-24">
-        <div className="bg-[#F9FAFB] p-10 rounded-s-lg">
-          <div className=" my-12">
-            <p className="font-bold text-2xl">Best Offers <span className="text-primary">Crispy Sandwiches</span></p>
-            <p className="text-sm">Enjoy the large size of sandwiches. Complete 
-            perfect slice of sandwiches.</p>
-          </div>
-
-          <button className="w-full flex items-center justify-center gap-2 text-white text-sm bg-primary p-3 rounded-md">
-            Proceed to order
-            <ChevronRightIcon className="h-5 w-5" />
-          </button>
-        </div>
-
-        <div className="relative col-span-2 bg-black rounded-e-lg w-full min-h-60 overflow-hidden">
-          <Image src="/images/sandwich.png" fill={true} alt="Sandwich image" className="object-cover" />
-        </div>
-      </div>
+      <AdCarousel />
 
       {/* Services Section */}
       <div className="max-w-screen grid justify-items-center content-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 p-5 md:py-5 md:px-24  lg:py-5 lg:px-24">
@@ -222,10 +206,6 @@ export default function Home() {
         <div className="relative order-first md:order-last lg:order-last w-full h-[350px] md:w-[80%] lg:w-[80%] md:h-[568px] lg:h-[568px] bg-transparent rounded-2xl overflow-hidden">
           <Image src="/images/chef.png" fill={true} alt="About image" className="object-cover" />
         </div>
-      </div>
-
-      <div className="w-screen bg-black h-auto">
-        <Image src={footTopImage} alt="Footer Top image" className="object-conver" />
       </div>
     </main>
   );
