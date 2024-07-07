@@ -36,7 +36,7 @@ export default function RootLayout({
         <NavBar />
         {children}
 
-        <div className="w-screen bg-black h-auto">
+        <div className="max-w-screen bg-black h-auto">
           <Image src={footTopImage} alt="Footer Top image" className="object-conver" />
         </div>
         <Footer />

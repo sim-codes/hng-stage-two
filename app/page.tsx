@@ -48,8 +48,8 @@ export default function Home() {
       <FeatureSection />
 
       {/* About Section */}
-      <div className="max-w-screen grid justify-items-center content-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 p-5 md:py-5 md:px-24  lg:py-5 lg:px-24">
-        <div className="relative sm:order-1 w-full h-[350px] md:w-[80%] lg:w-[80%] md:h-[568px] lg:h-[568px] bg-black rounded-2xl overflow-hidden">
+      <div className="grid justify-items-center content-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 p-5 md:py-5 md:px-24  lg:py-5 lg:px-24">
+        <div className="relative sm:order-1 w-full h-[350px] md:w-[80%] lg:w-[80%] md:h-[568px] lg:h-[468px] bg-black rounded-2xl overflow-hidden">
           <Image src="/images/about.png" fill={true} alt="About image" className="object-cover" />
         </div>
 
@@ -88,7 +88,7 @@ export default function Home() {
 
       {/* Services Section */}
       <div className="max-w-screen grid justify-items-center content-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 p-5 md:py-5 md:px-24  lg:py-5 lg:px-24">
-        <div className="relative sm:order-1 w-full h-[350px] md:w-[80%] lg:w-[80%] md:h-[568px] lg:h-[568px] bg-black rounded-2xl overflow-hidden">
+        <div className="relative sm:order-1 w-full h-[350px] md:w-[80%] lg:w-[80%] md:h-[568px] lg:h-[468px] bg-black rounded-2xl overflow-hidden">
           <Image src="/images/services.png" fill={true} alt="Services image" className="object-cover" />
         </div>
 

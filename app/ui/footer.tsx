@@ -8,7 +8,7 @@ import telIcon from "@/public/icons/tel.svg"
 
 export  default function Footer(){
     return (
-        <footer className="bg-[#191716] w-screen text-white px-8 md:px-24 lg:px-24 py-5">
+        <footer className="bg-[#191716] max-w-screen text-white px-8 md:px-24 lg:px-24 py-5">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-10 w-full pb-5 text-sm">
                 <div className="">
                     <Logo />
@@ -124,9 +124,9 @@ export  default function Footer(){
             <hr className="text-[#424242] my-5" />
 
             <div className="flex flex-wrap-reverse justify-between items-center py-5 text-sm">
-                <p>&copy; 2024, All Rights Reserved by FaithStore</p>
+                <p className="text-center md:text-left">&copy; 2024, All Rights Reserved by FaithStore</p>
                 
-                <div className="flex justify-center items-center w-full gap-2">
+                <div className="flex justify-center items-center gap-2">
                     <Image src="/images/visa.png" alt="Visa Icon" width={50} height={40} className=" object-contain" />
                     <Image src="/images/mastercard.png" alt="Mastercard Icon" width={50} height={40} className=" object-contain" />
                     <Image src="/images/paypal.png" alt="PayPal Icon" width={70} height={40} className=" object-contain" />

@@ -15,9 +15,9 @@ export default function FeatureSection() {
                 </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-5">
                 {FeaturedMenu.map((menu) => (
-                    <div key={menu.id} className="flex flex-col gap-2">
+                    <div key={menu.id} className="flex flex-col gap-5 my-5">
                         <div className="relative w-full h-72 bg-gray-200 rounded-xl flex items-center justify-center
                             overflow-hidden">
                             <Image src={menu.image} alt="Burger" fill={true} className="z-0 object-cover" />

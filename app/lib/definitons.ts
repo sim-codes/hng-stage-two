@@ -9,3 +9,10 @@ export type Slide = {
 export type CarouselProps = {
     slides: Array<Slide>;
 }
+
+export type Snack = {
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+}

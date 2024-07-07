@@ -16,6 +16,16 @@ const config: Config = {
         secondary: "#FCD507",
         white: "#F5F5F5",
       },
+      screens: {
+        'sm': '640px',  // Mobile screens and up (smallest category)
+        // => @media (min-width: 640px) { ... }
+  
+        'md': '960px',  // Tablet screens and up (medium category)
+        // => @media (min-width: 960px) { ... }
+  
+        'lg': '1280px', // Desktop screens and up (largest category)
+        // => @media (min-width: 1280px) { ... }
+      },
     },
   },
   plugins: [],
