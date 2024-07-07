@@ -12,7 +12,7 @@ export default function SearchSection() {
           <div className="flex justify-between gap-2 w-fit">
             <div className="flex gap-2 items-center bg-[#F9FAFB] border rounded-full p-2">
               <input type="text" placeholder="Search for food..." 
-              className="p-1 focus:outline-none focus:border-none max-w-2xl text-[#BCB9B4]" />
+              className="bg-transparent p-1 focus:outline-none focus:border-none max-w-2xl text-[#BCB9B4]" />
               <MagnifyingGlassMinusIcon className="h-5 w-5 text-[#BCB9B4]" />
             </div>
 

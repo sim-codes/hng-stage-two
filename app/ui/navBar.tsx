@@ -121,11 +121,18 @@ export default function NavBar(){
 
                             </div>
                         ) : (
-                            <button onClick={() => setIsLogin(true)}
-                                className="hidden md:flex justify-center items-center gap-3 bg-primary text-white rounded-lg p-4 w-auto h-12">
-                                Login
-                                <ArrowRightIcon className="w-4 h-4" />
-                            </button>
+                            <div className="flex">
+                                <button
+                                    className="hidden md:flex justify-center items-center gap-3 bg-[#FFF7F5] text-primary rounded-lg p-4 w-auto h-12">
+                                    Sign up
+                                    <ArrowRightIcon className="w-4 h-4" />
+                                </button>
+                                <button onClick={() => setIsLogin(true)}
+                                    className="hidden md:flex justify-center items-center gap-3 bg-primary text-white rounded-lg p-4 w-auto h-12">
+                                    Login
+                                    <ArrowRightIcon className="w-4 h-4" />
+                                </button>
+                            </div>
                         )}               
                         <div className="md:hidden flex items-center">
 
