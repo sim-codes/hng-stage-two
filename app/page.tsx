@@ -64,7 +64,7 @@ export default function Home() {
               From fluffy pastries to delicious meals, we pride ourselves 
               on using only the finest ingredients to create mouthwatering 
               masterpieces that will tantalize your taste buds. <br /><br />
-              But don't just take our word for it and experience the 
+              But don&lsquo;t just take our word for it and experience the 
               magic for yourself! Browse our irresistible selection, 
               place your order, and let the aroma of our fresh delicious 
               meals fill you with warmth and joy.
@@ -100,7 +100,7 @@ export default function Home() {
 
           <div className="flex flex-col gap-7 text-sm">
             <p>
-            Whether you're craving a sweet indulgence for yourself or searching for 
+            Whether you&lsquo;re craving a sweet indulgence for yourself or searching for 
             the perfect gift to delight a loved one, Master Chef have you covered. <br /><br />
             We bring our flavor and freshness to anywhere your comfort demands. 
             you can step into our virtual world to order at will or Step into 
@@ -149,7 +149,7 @@ export default function Home() {
           <Image src={how4Icon} alt="How it works" width="70" />
           <p className="font-bold">Make Payment</p>
           <p className="text-sm text-center text-wrap">
-            It's quick, safe, and simple. Select several methods of payment.
+            It&lsquo;s quick, safe, and simple. Select several methods of payment.
           </p>
         </div>
 

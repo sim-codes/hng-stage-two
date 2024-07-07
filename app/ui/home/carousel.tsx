@@ -13,7 +13,7 @@ export default function Carousel({ slides }: {slides: Array<Slide>}) {
             setCurrentSlide((prev) => (prev + 1) % slides.length);
         }, 3000);
         return () => clearInterval(interval);
-    }, [currentSlide, slides.length]);
+    }, [currentSlide]);
     
     return (
         <div className="relative w-screen h-[512px] flex-col justify-center items-center
