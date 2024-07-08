@@ -156,9 +156,9 @@ export default function Home() {
       </div>
 
       {/* How doest it work */}
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 w-full p-5">
         <h1 className="text-4xl font-bold md:mt-7 lg:mt-7">How does it work</h1>
-        <div className="w-full flex  gap-5 overflow-x-auto whitespace-nowrap no-scrollbar justify-between">
+        <div className="flex  gap-5 overflow-x-auto whitespace-nowrap no-scrollbar justify-between">
           <div className="flex m-2 flex-col gap-2 justify-center items-center min-w-56 md:w-56 lg:lg-56 min-h-44 bg-[#F9FAFB] rounded-lg p-3">
             <Image src={how1Icon} alt="How it works" width="70" />
             <p className="font-bold">Choose an Order</p>
