@@ -97,10 +97,9 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
                     // Add the product details with quantity to the state
                     const existingProduct = cartState.find(p => p.name === product.name);
 
-                    if (existingProduct) {
+                    if (!existingProduct) {
                         // If it exists, update the quantity
-                        existingProduct.qty += cartItem.qty;
-                    } else {
+                        // existingProduct.qty += cartItem.qty;
                         // If it doesn't exist, add it to the state with a random id
                         setCartState([...cartState, {
                             id: generateRandomId(),
@@ -108,16 +107,12 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
                             price: product.price,
                             qty: cartItem.qty,
                             image: product.image,
-                            description: product.description
-                        }])
+                            description: product.description,
+                        }]);
                     }
-                    
                 }
             });
         }
-    
-        // Log the updated state (for debugging purposes)
-        console.log(cartState);
     }
 
     function generateRandomId(): string {
@@ -150,11 +145,14 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
     // remove item from the setState variable
     const removeFromCart = (id: string) => {
         setCartState(cartState.filter(item => item.id !== id))
+        // update price
+        setTotalPrice(cartState.reduce((acc, item) => acc + item.price * item.qty, 0))
     }
 
     // clear cart
     const clearCart = () => {
         setCartState([])
+        setTotalPrice(0)
     }
 
     // update product quantity in the setState variable
@@ -170,18 +168,20 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
             return item
         })
         setCartState(updatedCart)
+        // update price
+        setTotalPrice(cartState.reduce((acc, item) => acc + item.price * item.qty, 0))
     }
 
     useEffect(() => {
         cart.forEach(menuType => {
             const productList = getProduct(menuType.menu);
             updateStateWithMenuProducts(menuType.menu, menuType, productList);
+            setTotalPrice((prev) => prev + menuType.data.reduce((acc, item) => {
+                const product = productList.find(p => p.id === item.id);
+                return acc + (product ? product.price * item.qty : 0);
+            }, 0));
         })
-
-        // Calculate the total price of the cart
-        const total = cartState.reduce((acc, item) => acc + item.price * item.qty, 0);
-        setTotalPrice(total);
-    }, [cart, cartState])
+    }, [cart])
 
     return (
         <CartContext.Provider 

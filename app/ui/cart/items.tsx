@@ -189,7 +189,7 @@ export default function CartItems(){
 
                         <div className="flex justify-between gap-3 items-center font-bold">
                             <p>Total</p>
-                            <p className="font-bold">₦ 4,7500</p>
+                            <p className="font-bold">₦ {totalPrice + 250 + 500 + 2500}</p>
                         </div>
                     </div>
 
