@@ -57,10 +57,10 @@ export default function NavBar(){
                         </div>
                         <div className="hidden md:flex items-center justify-between gap-5">
                             <div className="ml-4 flex gap-10 items-center space-x-4">
-                                <Link href="/" className={`flex justify-between 
+                                {/* <Link href="/" className={`flex justify-between 
                                     ${pathname === '/'? 'text-primary' : 'text-[#3B3533]]'}`
                                 }>Home
-                                </Link>
+                                </Link> */}
                                 {/* <Link href="#" className={clsx("text-[#3B3533]"
                                         ,{
                                             "text-primary": pathname === links.about.href
@@ -68,7 +68,7 @@ export default function NavBar(){
                                         )}
                                     >About
                                 </Link> */}
-                                <Link href="/meals" className={`flex justify-between ${pathname === '/meals'? 'text-primary' : 'text-[#3B3533]]'}`
+                                <Link href="/" className={`flex justify-between ${pathname === '/'? 'text-primary' : 'text-[#3B3533]]'}`
                                     }>Meals
                                     {/* <ChevronDownIcon className="w-4 h-4" /> */}
                                 </Link>
@@ -175,7 +175,7 @@ export default function NavBar(){
                             </div>
                         )}
                         <div className="grid gap-5 px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            <Link href="/" className={`flex justify-between 
+                            {/* <Link href="/" className={`flex justify-between 
                                 ${pathname === '/'? 'text-primary' : 'text-[#3B3533]]'}`
                                 }>
                                 <div className="flex gap-2">
@@ -183,7 +183,7 @@ export default function NavBar(){
                                     Home
                                 </div>
                                 <ChevronRightIcon className="w-4 h-4" />
-                            </Link>
+                            </Link> */}
                             {/* <Link href="#" className={`flex justify-between 
                                 ${pathname === '/about'? 'text-primary' : 'text-[#616161]'}`
                                 }>
@@ -193,8 +193,8 @@ export default function NavBar(){
                                 </div>
                                 <ChevronRightIcon className="w-4 h-4" />
                             </Link> */}
-                            <Link href="/meals" className={`flex justify-between 
-                                ${pathname === '/meals'? 'text-primary' : 'text-[#3B3533]]'}`
+                            <Link href="/" className={`flex justify-between 
+                                ${pathname === '/'? 'text-primary' : 'text-[#3B3533]]'}`
                                 }>
                                 <div className="flex gap-2">
                                     <Image src={mealIcon} alt="meal" width={30} height={30} />

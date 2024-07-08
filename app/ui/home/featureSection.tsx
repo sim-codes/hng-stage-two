@@ -1,11 +1,17 @@
+"use client";
+
 import Image from "next/image"
 import { FeaturedMenu } from "@/app/lib/data"
 import { ShoppingCartIcon, HeartIcon } from "@heroicons/react/24/outline"
 import { StarIcon, TagIcon, ClockIcon, ArrowRightIcon } from "@heroicons/react/16/solid"
 import clsx from "clsx"
 import Link from "next/link"
+import { Cart } from "@/app/lib/definitons"
+import { useCartState } from "@/app/ui/context"
 
 export default function FeatureSection() {
+    const {addToCart, cart } = useCartState()
+
     return (
         <section className="self-stretch p-5 mb-5">
             <div className="flex justify-between">
@@ -55,10 +61,12 @@ export default function FeatureSection() {
                         <div className="self-stretch flex justify-between">
                             <p className="text-2xl font-bold">${menu.price}</p>
 
-                            <Link href="/cart" className="flex gap-2 items-center font-semibold p-1 border border-primary text-primary rounded-md">
+                            <button onClick={() => addToCart(menu.id, "FeaturedMenu")}
+                             className="flex gap-2 items-center font-semibold p-1 border
+                            hover:text-white hover:bg-primary border-primary text-primary rounded-md">
                                 Add to Cart
                                 <ShoppingCartIcon className="h-5 w-5" />
-                            </Link>
+                            </button>
                         </div>
                     </div>
                 ))}

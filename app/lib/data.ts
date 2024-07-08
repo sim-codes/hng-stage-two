@@ -317,3 +317,46 @@ export const Offers = [
         image: "/images/chineseRice.png",
     },
 ]
+
+export const HotDishes = [
+    {
+        id: 1,
+        name: "Jollof Rice",
+        price: 5,
+        image: "/images/jollofRice.png",
+        offer: "20% off",
+        delivery: "25 mins",
+        status: "Availale for order now",
+        availble: true,
+    },
+    {
+        id: 2,
+        name: "Oha Soup",
+        price: 5,
+        image: "/images/oha.png",
+        offer: "20% off",
+        delivery: "25 mins",
+        status: "Availale for order now",
+        availble: true,
+    },
+    {
+        id: 3,
+        name: "Vegetable Salad",
+        price: 5,
+        image: "/images/vegetableSalad.png",
+        offer: "20% off",
+        delivery: "25 mins",
+        status: "Availale for order now",
+        availble: true,
+    },
+    {
+        id: 2,
+        name: "Semo",
+        price: 5,
+        image: "/images/semo.png",
+        offer: "20% off",
+        delivery: "25 mins",
+        status: "Availale for order now",
+        availble: true,
+    },
+]

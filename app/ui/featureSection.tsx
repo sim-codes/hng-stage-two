@@ -1,29 +1,31 @@
 "use client";
 
 import Image from "next/image"
-import { FeaturedMenu } from "@/app/lib/data"
+import { HotDishes } from "@/app/lib/data"
 import { ShoppingCartIcon, HeartIcon } from "@heroicons/react/24/outline"
 import { StarIcon, TagIcon, ClockIcon, ArrowRightIcon } from "@heroicons/react/16/solid"
 import clsx from "clsx"
 import Link from "next/link"
-import { useCartState } from "../context";
+import { Cart } from "@/app/lib/definitons"
+import { useCartState } from "@/app/ui/context"
 
-export default function SaveDelicacies() {
+export default function HotDishesSection() {
     const {addToCart, cart } = useCartState()
 
     return (
         <section className="self-stretch p-5 mb-5">
             <div className="flex justify-between">
-                <h2 className="font-bold text-2xl">Saved delicacies</h2>
-                <button className="flex justify-center items-center gap-2 rounded-md text-gray-400 font-bold max-w-40 p-2">
-                    sell all offers
+                <h2 className="font-bold text-2xl">Hot Dishes</h2>
+                <button className="flex justify-center items-center gap-2 bg-primary rounded-md text-white max-w-40 p-2">
+                    View all
+                    <ArrowRightIcon className="h-4 w-4" />
                 </button>
             </div>
 
-            <div className="flex gap-10 overflow-x-auto whitespace-nowrap no-scrollbar my-4">
-                {FeaturedMenu.map((menu) => (
-                    <div key={menu.id} className="flex flex-col gap-2">
-                        <div className="relative min-w-64 min-h-64 bg-gray-200 rounded-xl flex items-center justify-center
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-5">
+                {HotDishes.map((menu) => (
+                    <div key={menu.id} className="flex flex-col gap-5 my-5">
+                        <div className="relative w-full h-72 bg-gray-200 rounded-xl flex items-center justify-center
                             overflow-hidden">
                             <Image src={menu.image} alt="Burger" fill={true} className="z-0 object-cover" />
 
@@ -59,7 +61,9 @@ export default function SaveDelicacies() {
                         <div className="self-stretch flex justify-between">
                             <p className="text-2xl font-bold">${menu.price}</p>
 
-                            <button onClick={() => addToCart(menu.id, "FeaturedMenu")} className="flex gap-2 items-center p-1 border border-primary text-primary rounded-md">
+                            <button onClick={() => addToCart(menu.id, "FeaturedMenu")}
+                             className="flex gap-2 items-center font-semibold p-1 border
+                            hover:text-white hover:bg-primary border-primary text-primary rounded-md">
                                 Add to Cart
                                 <ShoppingCartIcon className="h-5 w-5" />
                             </button>

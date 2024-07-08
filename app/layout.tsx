@@ -5,7 +5,7 @@ import NavBar from "@/app/ui/navBar";
 import Footer from "@/app/ui/footer";
 import "./globals.css";
 import footTopImage from "@/public/images/footerTop.png";
-
+import {Provider} from "./ui/context"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,13 +24,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.className} font-sans`}>
       <body>
-        <NavBar />
-        {children}
+        <Provider>
+          <NavBar />
+          {children}
 
-        <div className="max-w-screen bg-black h-auto">
-          <Image src={footTopImage} alt="Footer Top image" className="object-conver" />
-        </div>
-        <Footer />
+          <div className="max-w-screen bg-black h-auto">
+            <Image src={footTopImage} alt="Footer Top image" className="object-conver" />
+          </div>
+          <Footer />
+        </Provider>
       </body>
     </html>
   );

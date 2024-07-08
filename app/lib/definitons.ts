@@ -16,3 +16,26 @@ export type Snack = {
     price: number;
     image: string;
 }
+
+export type Cart = {
+    data: Array<{
+        id: number;
+        qty: number;
+    }>;
+    menu: string;
+}
+
+export type Product = {
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+}
+
+export type Data = {
+    id: string;
+    name: string;
+    price: number;
+    qty: number;
+    image: string;
+}

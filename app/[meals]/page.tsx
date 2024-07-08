@@ -5,9 +5,43 @@ import { Snacks, Soups, MealsMenu, Swallow,
     Salads, Coffees, Drinks, IceCreams
 } from "../lib/data"
 import OfferSection from "../ui/meals/offerSection"
-import BannerImage from "@/public/images/mealsBanner.png"
-import Image from "next/image"
 import { Metadata } from "next"
+import Carousel from "@/app/ui/home/carousel";
+
+
+import { Slide } from "@/app/lib/definitons";
+
+const slides: Array<Slide> = [
+    { imageUrl: "/heroImage.png",
+        slideText1: "Craving delicious food?",
+        slideText2: "Discover the perfect dish for you",
+     },
+    {
+        imageUrl: "/slide2.png",
+        slideText1: "Indulge in our Mouth-Watering",
+        slideText2: "Menu Today with Irresistible Food!",
+     },
+     {
+        imageUrl: "/slide3.png",
+        slideText1: "Satisfy your Cravings with ",
+        slideText2: "Something Tasty! Click to order Now!",
+     },
+     {
+        imageUrl: "/slide4.png",
+        slideText1: "Don't Wait Any Longer,",
+        slideText2: "Dive into our Amazing Menu",
+     },
+     {
+        imageUrl: "/slide5.png",
+        slideText1: "Treat yourself to a Culinary Delight",
+        slideText2: "Place your order Now!",
+     },
+     {
+        imageUrl: "/slide6.png",
+        slideText1: "Hurry, Don’t Wait Anymore,",
+        slideText2: "Tantalize your Taste Buds Today!!",
+     },
+]
 
 export const metadata: Metadata = {
     title: 'Meals',
@@ -16,10 +50,7 @@ export const metadata: Metadata = {
 export default function Meals() {
     return (
         <main className="flex flex-col items-center min-h-screen md:px-24 lg:px-24">
-            <div className="max-w-screen h-auto md:rounded-2xl lg:rounded-2xl overflow-hidden">
-                <Image src={BannerImage} alt="Footer Top image" className="object-conver rounded-lg" />
-            </div>
-
+            <Carousel slides={slides} />
             <SearchSection />
             <SnackSection snacks={Snacks} menu="Snack" />
             <SnackSection snacks={Soups} menu="Soups" />

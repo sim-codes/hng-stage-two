@@ -1,10 +1,15 @@
+"use client";
+
 import Image from "next/image"
 import { FeaturedMenu } from "@/app/lib/data"
 import { ShoppingCartIcon, CurrencyDollarIcon, ArrowRightIcon } from "@heroicons/react/24/outline"
 import { Snack } from "@/app/lib/definitons"
-import Link from "next/link"
+import { useCartState } from "@/app/ui/context"
 
 export default function SnackSection({ snacks, menu }: { snacks: Array<Snack>, menu: string}) {
+    const {addToCart, cart } = useCartState()
+    const menuType = menu
+
     return (
         <section className="self-stretch p-5 mb-5">
             <div className="flex justify-between">
@@ -26,10 +31,10 @@ export default function SnackSection({ snacks, menu }: { snacks: Array<Snack>, m
                             <div className="z-20 absolute bottom-14 left-0 w-full flex justify-between items-center gap-2 px-8">
                                 <p className="font-bold text-lg text-white">{menu.name}</p>
                                 
-                                <Link href="/cart" className="flex w-24 gap-2 items-center justify-center p-1 border border-primary text-white text-sm bg-primary rounded-md">
+                                <button onClick={() => addToCart(menu.id, menuType)} className="flex w-24 gap-2 items-center justify-center p-1 border border-primary text-white text-sm bg-primary rounded-md">
                                     Buy
                                     <ShoppingCartIcon className="h-5 w-5" />
-                                </Link>
+                                </button>
                             </div>
 
                             <div className="z-20 absolute bottom-4 left-0 w-full flex justify-between items-center gap-2 px-8">
