@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRightIcon, ChevronRightIcon, StarIcon } from "@heroicons/react/16/solid";
+import { StarIcon } from "@heroicons/react/16/solid";
 import { StarIcon as StarIconOutline } from "@heroicons/react/24/outline";
 
 export default function ReviewsSection() {
@@ -31,14 +31,13 @@ export default function ReviewsSection() {
                   <div className=""></div>
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <StarIcon className="h-5 w-5 text-secondary" />
+                <div className="flex items-center">
                   <StarIcon className="h-5 w-5 text-secondary" />
                   <StarIcon className="h-5 w-5 text-secondary" />
                   <StarIcon className="h-5 w-5 text-secondary" />
                   <StarIcon className="h-5 w-5 text-secondary" />
                   <StarIconOutline className="h-5 w-5 text-secondary" />
-                  <p className="text-sm">4,8</p>
+                  <p className="text-sm ml-1">4,8</p>
                 </div>
               </div>
             </div>

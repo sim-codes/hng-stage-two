@@ -14,7 +14,7 @@ export default function SaveDelicacies() {
                 </button>
             </div>
 
-            <div className="flex gap-10 overflow-x-auto whitespace-nowrap my-4">
+            <div className="flex gap-10 overflow-x-auto whitespace-nowrap no-scrollbar my-4">
                 {FeaturedMenu.map((menu) => (
                     <div key={menu.id} className="flex flex-col gap-2">
                         <div className="relative min-w-64 min-h-64 bg-gray-200 rounded-xl flex items-center justify-center

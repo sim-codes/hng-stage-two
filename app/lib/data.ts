@@ -81,7 +81,6 @@ export const FeaturedMenu = [
     },
 ]
 
-
 export const Snacks = [
     {
         id: 1,
@@ -108,7 +107,6 @@ export const Snacks = [
         image: "/images/chickenPie.png",
     },
 ]
-
 
 export const Soups = [
     {
@@ -163,7 +161,6 @@ export const MealsMenu = [
         image: "/images/noodle.png",
     },
 ]
-
 
 export const Salads = [
     {
@@ -222,9 +219,36 @@ export const Coffees = [
 export const Drinks = [
     {
         id: 1,
+        name: "Soft Drinks",
+        price: 5,
+        image: "/images/drinks.png",
+    },
+    {
+        id: 2,
+        name: "Energy Drinks",
+        price: 5,
+        image: "/images/energy.png",
+    },
+    {
+        id: 3,
+        name: "Fruit Juice",
+        price: 5,
+        image: "/images/fruitDrinks.png",
+    },
+    {
+        id: 4,
+        name: "Packaged Juice",
+        price: 5,
+        image: "/images/packaged.png",
+    },
+]
+
+export const IceCreams = [
+    {
+        id: 1,
         name: "Fruit Icecream",
         price: 5,
-        image: "/images/druitIcecream.png",
+        image: "/images/fruitIcecream.png",
     },
     {
         id: 2,
@@ -246,3 +270,50 @@ export const Drinks = [
     },
 ]
 
+export const Swallow = [
+    {
+        id: 1,
+        name: "Swallow",
+        price: 5,
+        image: "/images/swallow.png",
+    },
+    {
+        id: 2,
+        name: "Semo",
+        price: 5,
+        image: "/images/semo.png",
+    },
+    {
+        id: 3,
+        name: "Amala",
+        price: 5,
+        image: "/images/amala.png",
+    },
+    {
+        id: 4,
+        name: "Fufu",
+        price: 5,
+        image: "/images/fufu.png",
+    },
+]
+
+export const Offers = [
+    {
+        id: 1,
+        name: "Chicken Wings with Chips",
+        category: "Fries",
+        image: "/images/chickenWings.png",
+    },
+    {
+        id: 2,
+        name: "Spaghetti with Salad",
+        category: "Veggies",
+        image: "/images/spaghettiSalad.png",
+    },
+    {
+        id: 3,
+        name: "Chinese Rice",
+        category: "Rice",
+        image: "/images/chineseRice.png",
+    },
+]

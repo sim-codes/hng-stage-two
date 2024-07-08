@@ -223,7 +223,7 @@ export default function NavBar(){
 
                             {isLogin ? (
                                 <>
-                                    <Link href="/cart" className={`flex justify-between 
+                                    {/* <Link href="/cart" className={`flex justify-between 
                                         ${pathname === '/order'? 'text-primary' : 'text-[#616161]'}`
                                         }>
                                         <div className="flex gap-2">
@@ -231,8 +231,8 @@ export default function NavBar(){
                                             Order
                                         </div>
                                         <ChevronRightIcon className="w-4 h-4" />
-                                    </Link>
-                                    <Link href="#" className={`flex justify-between 
+                                    </Link> */}
+                                    {/* <Link href="#" className={`flex justify-between 
                                         ${pathname === '/account'? 'text-primary' : 'text-[#616161]'}`
                                         }>
                                         <div className="flex gap-2">
@@ -240,8 +240,8 @@ export default function NavBar(){
                                             Acount
                                         </div>
                                         <ChevronRightIcon className="w-4 h-4" />
-                                    </Link>
-                                    <Link href="#" className={`flex justify-between 
+                                    </Link> */}
+                                    {/* <Link href="#" className={`flex justify-between 
                                         ${pathname === '/saved'? 'text-primary' : 'text-[#616161]'}`
                                         }>
                                         <div className="flex gap-2">
@@ -249,7 +249,7 @@ export default function NavBar(){
                                             Saved Items
                                         </div>
                                         <ChevronRightIcon className="w-4 h-4" />
-                                    </Link>
+                                    </Link> */}
                                     <button onClick={() => setIsLogin(false)}
                                         className="flex justify-center items-center gap-3 bg-primary text-white rounded-lg p-2 w-auto h-12">
                                             Logout

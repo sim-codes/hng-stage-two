@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function SearchSection() {
     return (
-        <section className="max-w-screen self-stretch md:flex flex-col md:m-14 lg:m-14 m-2 md:px-24 lg:px-24">
+        <section className="max-w-screen self-stretch md:flex flex-col md:m-14 lg:m-14 m-2">
           <div className="w-full flex flex-wrap justify-between items-center my-2 p-3">
             <h2 className="font-bold text-2xl my-5">Search by categories</h2>
 
