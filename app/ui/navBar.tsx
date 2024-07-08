@@ -57,11 +57,9 @@ export default function NavBar(){
                         </div>
                         <div className="hidden md:flex items-center justify-between gap-5">
                             <div className="ml-4 flex gap-10 items-center space-x-4">
-                                <Link href="/" className={clsx("text-[#616161]"
-                                    ,{
-                                        "text-primary": pathname === links.home.href
-                                    }
-                                    )}>Home
+                                <Link href="/" className={`flex justify-between 
+                                    ${pathname === '/'? 'text-primary' : 'text-[#3B3533]]'}`
+                                }>Home
                                 </Link>
                                 {/* <Link href="#" className={clsx("text-[#3B3533]"
                                         ,{
@@ -70,12 +68,8 @@ export default function NavBar(){
                                         )}
                                     >About
                                 </Link> */}
-                                <Link href="/meals" className={clsx("text-[#3B3533] flex justify-center items-center gap-2"
-                                    ,{
-                                        "text-primary": pathname === links.meals.href
-                                    }
-                                    )}
-                                    >Meals
+                                <Link href="/meals" className={`flex justify-between ${pathname === '/meals'? 'text-primary' : 'text-[#3B3533]]'}`
+                                    }>Meals
                                     {/* <ChevronDownIcon className="w-4 h-4" /> */}
                                 </Link>
                                 {/* <Link href="#" className={clsx("text-[#3B3533] flex justify-center items-center gap-2"
@@ -181,11 +175,9 @@ export default function NavBar(){
                             </div>
                         )}
                         <div className="grid gap-5 px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            <Link href="/" className={clsx("mt-8 flex justify-between text-[#3B3533]"
-                                ,{
-                                    "text-primary": pathname === links.home.href
-                                }
-                                )}>
+                            <Link href="/" className={`flex justify-between 
+                                ${pathname === '/'? 'text-primary' : 'text-[#3B3533]]'}`
+                                }>
                                 <div className="flex gap-2">
                                     <ShoppingBagIcon className="h-6 w-6" />
                                     Home
