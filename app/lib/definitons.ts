@@ -30,6 +30,7 @@ export type Product = {
     name: string;
     price: number;
     image: string;
+    description: string;
 }
 
 export type Data = {
@@ -38,4 +39,5 @@ export type Data = {
     price: number;
     qty: number;
     image: string;
+    description: string;
 }

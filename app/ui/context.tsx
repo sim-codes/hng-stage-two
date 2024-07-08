@@ -2,7 +2,7 @@
 
 import {useState, useEffect, createContext, useContext} from "react"
 import { Cart, Data, Product } from "@/app/lib/definitons"
-import { FeaturedMenu, Snacks, Soups,
+import { HotDishes, Snacks, Soups,
     MealsMenu, Salads, Drinks, IceCreams, Swallow, Coffees
  } from "@/app/lib/data";
  import { useRouter } from 'next/navigation'
@@ -14,6 +14,8 @@ type CartContextType = {
     cartState: Array<Data>;
     addToCart: (id: number, menu:string) => void;
     removeFromCart: (id: string) => void;
+    addReduceProductQuantity: (id: string, action: string) => void;
+    clearCart: () => void;
 }
 
 const CartContext = createContext<CartContextType>({
@@ -23,6 +25,12 @@ const CartContext = createContext<CartContextType>({
         throw new Error("Function not implemented.");
     },
     removeFromCart: function (id: string): void {
+        throw new Error("Function not implemented.");
+    },
+    addReduceProductQuantity: function (id: string, action: string): void {
+        throw new Error("Function not implemented.");
+    },
+    clearCart: function (): void {
         throw new Error("Function not implemented.");
     }
 })
@@ -95,7 +103,8 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
                             name: product.name,
                             price: product.price,
                             qty: cartItem.qty,
-                            image: product.image
+                            image: product.image,
+                            description: product.description
                         }])
                     }
                     
@@ -130,13 +139,33 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
             case "Coffee & Tea":
                 return Coffees;
             default:
-                return FeaturedMenu;
+                return HotDishes;
         }
     }
 
     // remove item from the setState variable
     const removeFromCart = (id: string) => {
         setCartState(cartState.filter(item => item.id !== id))
+    }
+
+    // clear cart
+    const clearCart = () => {
+        setCartState([])
+    }
+
+    // update product quantity in the setState variable
+    const addReduceProductQuantity = (id: string, action: string) => {
+        const updatedCart = cartState.map(item => {
+            if (item.id === id) {
+                if (action === "add" && item.qty < 10) {
+                    item.qty += 1
+                } else if (action === "sub" && item.qty > 1){
+                    item.qty -= 1
+                }
+            }
+            return item
+        })
+        setCartState(updatedCart)
     }
 
     useEffect(() => {
@@ -147,7 +176,8 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
     }, [cart])
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, cartState, removeFromCart }}>
+        <CartContext.Provider 
+        value={{ cart, addToCart, cartState, removeFromCart, addReduceProductQuantity, clearCart }}>
             {children}
         </CartContext.Provider>
     )

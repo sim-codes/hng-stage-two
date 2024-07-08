@@ -87,25 +87,30 @@ export const Snacks = [
         name: "Chief Burger Meal",
         price: 5,
         image: "/images/chiefBurger.png",
+        description: "A hearty burger with a juicy beef patty, fresh veggies, melted cheese, plantain fries, and a local soft drink."
     },
     {
         id: 2,
         name: "Egg Roll",
         price: 5,
         image: "/images/eggRoll.png",
+        description: "Crispy roll filled with seasoned beef or chicken, onions, and spices, perfect with spicy pepper sauce."
     },
     {
         id: 3,
         name: "Shawarma",
         price: 5,
         image: "/images/shawarma.png",
+        description: "A wrap filled with seasoned beef or chicken, fresh veggies, and spicy sauce, perfect for a quick snack."
     },
     {
         id: 4,
         name: "Chicken Pie",
         price: 5,
         image: "/images/chickenPie.png",
+        description: "A flaky pastry filled with seasoned chicken, onions, and spices, perfect for a quick snack."
     },
+   
 ]
 
 export const Soups = [
@@ -114,24 +119,28 @@ export const Soups = [
         name: "Vegetable Soup",
         price: 5,
         image: "/images/soups.png",
+        description: "Nigerian Vegetable Soup is a flavorful blend of fresh local vegetables cooked in a rich broth with traditional spices, meats or fish, offering a hearty and nutritious dish."        
     },
     {
         id: 2,
         name: "Oha Soup",
         price: 5,
         image: "/images/oha.png",
+        description: "Oha Soup is a traditional Nigerian soup made with oha leaves, cocoyam, and assorted meats or fish, offering a rich and flavorful dish."
     },
     {
         id: 3,
         name: "Egusi Soup",
         price: 5,
         image: "/images/egusi.png",
+        description: "Egusi Soup is a traditional Nigerian soup made with ground melon seeds, vegetables, and assorted meats or fish, offering a rich and flavorful dish."
     },
     {
         id: 4,
         name: "Okro Soup",
         price: 5,
         image: "/images/okro.png",
+        description: "Okro Soup is a traditional Nigerian soup made with okra, vegetables, and assorted meats or fish, offering a rich and flavorful dish."
     },
 ]
 
@@ -141,24 +150,28 @@ export const MealsMenu = [
         name: "Jollof Rice",
         price: 5,
         image: "/images/jollofRice.png",
+        description: "A flavorful blend of rice cooked in a rich tomato sauce with traditional spices, offering a hearty and delicious dish."
     },
     {
         id: 2,
         name: "Fried Rice",
         price: 5,
         image: "/images/friedRice.png",
+        description: "A flavorful blend of rice cooked with vegetables, eggs, and assorted meats or fish, offering a hearty and delicious dish."
     },
     {
         id: 3,
         name: "Beans & Plantain",
         price: 5,
         image: "/images/beansPlatain.png",
+        description: "A traditional Nigerian dish made with beans cooked in a rich tomato sauce, served with fried plantains, offering a hearty and delicious meal."
     },
     {
         id: 4,
         name: "Noodles",
         price: 5,
         image: "/images/noodle.png",
+        description: "A quick and easy meal made with noodles, vegetables, and assorted meats or fish, offering a hearty and delicious dish."
     },
 ]
 
@@ -168,24 +181,29 @@ export const Salads = [
         name: "Chicken Salad",
         price: 5,
         image: "/images/salads.png",
+        description: "A fresh salad with grilled chicken, fresh veggies, and a tangy dressing, perfect for a light meal."
+
     },
     {
         id: 2,
         name: "Coleslaw Salad",
         price: 5,
         image: "/images/colseLaw.png",
+        description: "A fresh salad with shredded cabbage, carrots, and a tangy dressing, perfect for a light meal."
     },
     {
         id: 3,
         name: "Vegetable Salad",
         price: 5,
         image: "/images/vegetableSalad.png",
+        description: "A fresh salad with fresh veggies, and a tangy dressing, perfect for a light meal."
     },
     {
         id: 4,
         name: "Fruit Salad",
         price: 5,
         image: "/images/fruitSalad.png",
+        description: "A fresh salad with fresh fruits, and a tangy dressing, perfect for a light meal."
     },
 ]
 
@@ -195,24 +213,28 @@ export const Coffees = [
         name: "Decaf Coffee",
         price: 5,
         image: "/images/decaf.png",
+        description: "A rich and flavorful blend of decaffeinated coffee, offering a smooth and delicious drink."
     },
     {
         id: 2,
         name: "Fresh Mint Tea",
         price: 5,
         image: "/images/mint.png",
+        description: "A refreshing blend of fresh mint leaves, offering a light and delicious drink."
     },
     {
         id: 3,
         name: "Chocolate Tea",
         price: 5,
         image: "/images/chocolate.png",
+        description: "A rich and flavorful blend of chocolate tea, offering a smooth and delicious drink."
     },
     {
         id: 4,
         name: "Black Coffee",
         price: 5,
         image: "/images/black.png",
+        description: "A rich and flavorful blend of black coffee, offering a smooth and delicious drink."
     },
 ]
 
@@ -276,24 +298,28 @@ export const Swallow = [
         name: "Swallow",
         price: 5,
         image: "/images/swallow.png",
+        description: "A traditional Nigerian dish made with cassava flour, served with a rich soup or stew."
     },
     {
         id: 2,
         name: "Semo",
         price: 5,
         image: "/images/semo.png",
+        description: "A traditional Nigerian dish made with semolina flour, served with a rich soup or stew."
     },
     {
         id: 3,
         name: "Amala",
         price: 5,
         image: "/images/amala.png",
+        description: "A traditional Nigerian dish made with yam flour, served with a rich soup or stew."
     },
     {
         id: 4,
         name: "Fufu",
         price: 5,
         image: "/images/fufu.png",
+        descriptiong: "A traditional Nigerian dish made with cassava flour, served with a rich soup or stew."
     },
 ]
 
@@ -328,6 +354,7 @@ export const HotDishes = [
         delivery: "25 mins",
         status: "Availale for order now",
         availble: true,
+        description: "A flavorful blend of rice cooked in a rich tomato sauce with traditional spices, offering a hearty and delicious dish."
     },
     {
         id: 2,
@@ -338,6 +365,7 @@ export const HotDishes = [
         delivery: "25 mins",
         status: "Availale for order now",
         availble: true,
+        description: "A traditional Nigerian soup made with oha leaves, cocoyam, and assorted meats or fish, offering a rich and flavorful dish."
     },
     {
         id: 3,
@@ -348,9 +376,10 @@ export const HotDishes = [
         delivery: "25 mins",
         status: "Availale for order now",
         availble: true,
+        description: "A fresh salad with fresh veggies, and a tangy dressing, perfect for a light meal."
     },
     {
-        id: 2,
+        id: 4,
         name: "Semo",
         price: 5,
         image: "/images/semo.png",
@@ -358,5 +387,6 @@ export const HotDishes = [
         delivery: "25 mins",
         status: "Availale for order now",
         availble: true,
+        description: "A traditional Nigerian dish made with semolina flour, served with a rich soup or stew."
     },
 ]

@@ -11,7 +11,7 @@ import { Cart } from "@/app/lib/definitons"
 
 
 export default function CartItems(){
-    const { cart, cartState, removeFromCart } = useCartState()
+    const { cart, cartState, removeFromCart, addReduceProductQuantity, clearCart } = useCartState()
     
     
     
@@ -23,14 +23,14 @@ export default function CartItems(){
                     <div className="flex justify-between items-center gap-10">
                         <div className="flex items-center gap-2">
                             <input type="checkbox" name="" id="" />
-                            <p className="flex gap-1 items-center font-bold">Select all Item
+                            <p className="flex gap-1 items-center font-bold">Number of Items in Cart
                                 <span className="text-white bg-primary rounded-full 
-                                    w-6 h-6 flex items-center justify-center text-sm">2
+                                    w-6 h-6 flex items-center justify-center text-sm">{cartState.length}
                                 </span>
                             </p>
                         </div>
 
-                        <button className="text-primary text-sm"> x Clear Cart</button>
+                        <button className="text-primary text-sm" onClick={() => clearCart()}> x Clear Cart</button>
                     </div>
 
                     <div className="hidden md:block lg:block">
@@ -60,8 +60,7 @@ export default function CartItems(){
                                         <div className="flex flex-col gap-3 justify-center w-full">
                                             <p className="font-bold">{item.name}</p>
                                             <p className="text-gray-400 text-sm">
-                                                1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 
-                                                3 medium sized French Fries, 3 cold drinks
+                                               {item.description}
                                             </p>
 
                                             <div className="flex justify-between">
@@ -83,16 +82,16 @@ export default function CartItems(){
                                     </button>
 
                                     <div className="flex items-center gap-2">
-                                        <button className="bg-gray-200 rounded-full p-1">
+                                        <button className="bg-gray-200 rounded-full p-1" onClick={() => addReduceProductQuantity(item.id, "sub")}>
                                             <MinusIcon className="h-4 w-4" />
                                         </button>
                                         <p className="">{item.qty}</p>
-                                        <button className="bg-[#FFF2ED] text-primary rounded-full p-1">
+                                        <button className="bg-[#FFF2ED] text-primary rounded-full p-1" onClick={() => addReduceProductQuantity(item.id, "add")}>
                                             <PlusIcon className="h-4 w-4" />
                                         </button>
                                     </div>
 
-                                    <p className="font-bold text-xl text-right">${item.price}</p>
+                                    <p className="font-bold text-xl text-right">₦{item.price}</p>
                                     </div>
                                     <hr className="border my-8" />
                                 </div>
@@ -101,112 +100,65 @@ export default function CartItems(){
                     </div>
 
                     <div className="block md:hidden lg:hidden">
-                        <div className="my-3">
-                            <div className="flex items-center justify-center gap-2">
-                                <div className="flex gap-3">
-                                    <input
-                                        type="checkbox"
-                                        id="checkbox"
-                                        className=" self-start appearance-none min-w-4 min-h-4 border border-gray-300 
-                                        rounded-sm checked:bg-primary checked:border-transparent focus:outline-none"
-                                    />
-                                    <div className="relative bg-black h-36 min-w-32 rounded-lg overflow-hidden">
-                                        <Image src="/images/chiefBurger.png" alt="food" fill={true} className="object-cover"/>
-                                    </div>
-                                    
-                                    <div className="flex flex-col gap-3 justify-center w-48">
-                                        <p className="font-bold flex justify-between">
-                                            Chief Burger Burger
-                                            
-                                            <div className="bg-gray-200 p-1 rounded-full">
-                                                <HeartIcon className="h-4 w-4" />
-                                            </div>
-                                        </p>
-                                        <p className="text-gray-400 text-sm">
-                                            1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 
-                                            3 medium sized French Fries, 3 cold drinks
-                                        </p>
+                        {
+                            cartState.length === 0 ? (
+                                <div className="flex justify-center items-center gap-2">
+                                    <p className="text-center">No item in cart</p>
+                                    <Link href="/meals" className="bg-primary text-white p-2 rounded-lg text-sm">
+                                        Continue Shopping
+                                    </Link>
+                                </div>
+                            ) : cartState.map((item) => (
+                                <div className="my-3">
+                                    <div className="flex items-center justify-center gap-2">
+                                    <div className="flex gap-3">
+                                        <input
+                                            type="checkbox"
+                                            id="checkbox"
+                                            className=" self-start appearance-none min-w-4 min-h-4 border border-gray-300 
+                                            rounded-sm checked:bg-primary checked:border-transparent focus:outline-none"
+                                        />
+                                        <div className="relative bg-black h-36 min-w-32 rounded-lg overflow-hidden">
+                                            <Image src={item.image} alt="food" fill={true} className="object-cover"/>
+                                        </div>
+                                        
+                                        <div className="flex flex-col gap-3 justify-center w-48">
+                                            <p className="font-bold flex justify-between">
+                                                {item.name}
+                                                
+                                                <div className="bg-gray-200 p-1 rounded-full">
+                                                    <HeartIcon className="h-4 w-4" />
+                                                </div>
+                                            </p>
+                                            <p className="text-gray-400 text-sm">
+                                                {item.description}
+                                            </p>
 
-                                        <div className="flex justify-between">
-                                            <div className="flex items-center gap-2">
-                                                <button className="bg-gray-200 rounded-full p-1">
-                                                    <MinusIcon className="h-4 w-4" />
-                                                </button>
-                                                <p className="">1</p>
-                                                <button className="bg-[#FFF2ED] text-primary rounded-full p-1">
-                                                    <PlusIcon className="h-4 w-4" />
-                                                </button>
+                                            <div className="flex justify-between">
+                                                <div className="flex items-center gap-2">
+                                                    <button className="bg-gray-200 rounded-full p-1" onClick={() => addReduceProductQuantity(item.id, "sub")}>
+                                                        <MinusIcon className="h-4 w-4" />
+                                                    </button>
+                                                    <p className="">{item.qty}</p>
+                                                    <button className="bg-[#FFF2ED] text-primary rounded-full p-1" onClick={() => addReduceProductQuantity(item.id, "add")}>
+                                                        <PlusIcon className="h-4 w-4" />
+                                                    </button>
+                                                </div>
+                                                <p className="p-3 font-bold text-2xl text-right">₦{item.price}</p>
                                             </div>
-                                            <p className="p-3 font-bold text-2xl text-right">$38.00</p>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="flex justify-between">
-                                <button className="flex items-center justify-center gap-2 text-primary">
-                                    <TrashIcon className="h-5 w-5" />
-                                    Remove
-                                </button>
-
-                                <button className="min-w-32 flex items-center justify-center gap-2 bg-primary text-white p-2 rounded-lg text-sm">
-                                    <PlusIcon className="h-5 w-5" />
-                                    Add Toppings
-                                </button>
-                            </div>
-                        </div>
-                        <div className="my-3">
-                            <div className="flex items-center justify-center gap-2">
-                                <div className="flex gap-3">
-                                    <input
-                                        type="checkbox"
-                                        id="checkbox"
-                                        className=" self-start appearance-none min-w-4 min-h-4 border border-gray-300 
-                                        rounded-sm checked:bg-primary checked:border-transparent focus:outline-none"
-                                    />
-                                    <div className="relative bg-black h-36 min-w-32 rounded-lg overflow-hidden">
-                                        <Image src="/images/chiefBurger.png" alt="food" fill={true} className="object-cover"/>
-                                    </div>
-                                    
-                                    <div className="flex flex-col gap-3 justify-center w-48">
-                                        <p className="font-bold flex justify-between">
-                                            Chief Burger Burger
-                                            
-                                            <div className="bg-gray-200 p-1 rounded-full">
-                                                <HeartIcon className="h-4 w-4" />
-                                            </div>
-                                        </p>
-                                        <p className="text-gray-400 text-sm">
-                                            1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 
-                                            3 medium sized French Fries, 3 cold drinks
-                                        </p>
-
-                                        <div className="flex justify-between">
-                                            <div className="flex items-center gap-2">
-                                                <button className="bg-gray-200 rounded-full p-1">
-                                                    <MinusIcon className="h-4 w-4" />
-                                                </button>
-                                                <p className="">1</p>
-                                                <button className="bg-[#FFF2ED] text-primary rounded-full p-1">
-                                                    <PlusIcon className="h-4 w-4" />
-                                                </button>
-                                            </div>
-                                            <p className="p-3 font-bold text-2xl text-right">$38.00</p>
-                                        </div>
+                                    <div className="flex justify-between">
+                                        <button className="flex items-center justify-center gap-2 text-primary" onClick={() => removeFromCart(item.id)}>
+                                            <TrashIcon className="h-5 w-5" />
+                                            Remove
+                                        </button>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="flex justify-between">
-                                <button className="flex items-center justify-center gap-2 text-primary">
-                                    <TrashIcon className="h-5 w-5" />
-                                    Remove
-                                </button>
-
-                                <button className="min-w-32 flex items-center justify-center gap-2 font-semibold bg-primary text-white p-2 rounded-lg text-sm">
-                                    <PlusIcon className="h-5 w-5" />
-                                    Add Toppings
-                                </button>
-                            </div>
-                        </div>
+                                <hr className="border my-8" />
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
 
@@ -216,29 +168,29 @@ export default function CartItems(){
                     <div className="flex flex-col gap-5 py-5 mt-5 text-sm">
                         <div className="flex justify-between gap-3 items-center">
                             <p>Sub Total</p>
-                            <p className="font-bold">$89.00</p>
+                            <p className="font-bold">₦ 2,000</p>
                         </div>
 
                         <div className="flex justify-between gap-3 items-center">
                             <p>Tax (2%)</p>
-                            <p className="">$1.79</p>
+                            <p className="">₦ 250</p>
                         </div>
 
                         <div className="flex justify-between gap-3 items-center">
                             <p>Discount (5%)</p>
-                            <p className="">$4.47</p>
+                            <p className="">₦ 500</p>
                         </div>
 
                         <div className="flex justify-between gap-3 items-center">
                             <p>Dilivery 2%</p>
-                            <p className="">$3</p>
+                            <p className="">₦ 2,500</p>
                         </div>
 
                         <hr className="border" />
 
                         <div className="flex justify-between gap-3 items-center font-bold">
                             <p>Total</p>
-                            <p className="font-bold">$89.00</p>
+                            <p className="font-bold">₦ 4,7500</p>
                         </div>
                     </div>
 

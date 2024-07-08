@@ -38,7 +38,7 @@ export default function SnackSection({ snacks, menu }: { snacks: Array<Snack>, m
                             </div>
 
                             <div className="z-20 absolute bottom-4 left-0 w-full flex justify-between items-center gap-2 px-8">
-                                <p className="font-bold text-secondary text-md">${menu.price} (per plate)</p>
+                                <p className="font-bold text-secondary text-md">₦ {menu.price} (per plate)</p>
                                 
                                 <button className="flex w-24 gap-2 items-center justify-center p-1 text-white text-sm">
                                     <CurrencyDollarIcon className="h-5 w-5" />
