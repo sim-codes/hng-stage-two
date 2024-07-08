@@ -11,7 +11,7 @@ import { Cart } from "@/app/lib/definitons"
 
 
 export default function CartItems(){
-    const { cart, cartState, removeFromCart, addReduceProductQuantity, clearCart } = useCartState()
+    const { cart, cartState, removeFromCart, addReduceProductQuantity, clearCart, totalPrice } = useCartState()
     
     
     
@@ -37,7 +37,7 @@ export default function CartItems(){
                         
                         {
                             cartState.length === 0 ? (
-                                <div className="flex flex-col justify-center items-center gap-5">
+                                <div className="flex flex-col justify-center items-center gap-5 my-10">
                                     <p className="text-center">No item in cart</p>
                                     <Link href="/" className="bg-primary text-white p-2 rounded-lg text-sm">
                                         Continue Shopping
@@ -76,10 +76,10 @@ export default function CartItems(){
                                             </div>
                                         </div>
                                     </div>
-                                    <button className="min-w-36 flex items-center justify-center gap-2 font-semibold bg-primary text-white p-2 rounded-lg text-sm">
+                                    {/* <button className="min-w-36 flex items-center justify-center gap-2 font-semibold bg-primary text-white p-2 rounded-lg text-sm">
                                         <PlusIcon className="h-5 w-5" />
                                         Add Toppings
-                                    </button>
+                                    </button> */}
 
                                     <div className="flex items-center gap-2">
                                         <button className="bg-gray-200 rounded-full p-1" onClick={() => addReduceProductQuantity(item.id, "sub")}>
@@ -91,7 +91,7 @@ export default function CartItems(){
                                         </button>
                                     </div>
 
-                                    <p className="font-bold text-xl text-right">₦{item.price}</p>
+                                    <p className="font-bold text-xl text-right">₦{(item.price * item.qty)}</p>
                                     </div>
                                     <hr className="border my-8" />
                                 </div>
@@ -99,10 +99,11 @@ export default function CartItems(){
                         }
                     </div>
 
+                    {/* For Mobile */}
                     <div className="block md:hidden lg:hidden">
                         {
                             cartState.length === 0 ? (
-                                <div className="flex flex-col justify-center items-center gap-5">
+                                <div className="flex flex-col justify-center items-center gap-5 my-10">
                                     <p className="text-center">No item in cart</p>
                                     <Link href="/" className="bg-primary text-white p-2 rounded-lg text-sm">
                                         Continue Shopping
@@ -110,7 +111,7 @@ export default function CartItems(){
                                 </div>
                             ) : cartState.map((item) => (
                                 <div className="my-3" key={item.id}>
-                                    <div className="flex items-center justify-center gap-2">
+                                    <div className="flex flex-col items-center justify-center gap-2">
                                     <div className="flex gap-3">
                                         <input
                                             type="checkbox"
@@ -130,9 +131,7 @@ export default function CartItems(){
                                                     <HeartIcon className="h-4 w-4" />
                                                 </div>
                                             </p>
-                                            <p className="text-gray-400 text-sm">
-                                                {item.description}
-                                            </p>
+                                            <p className="text-gray-400 text-xs">{item.description}</p>
 
                                             <div className="flex justify-between">
                                                 <div className="flex items-center gap-2">
@@ -144,7 +143,7 @@ export default function CartItems(){
                                                         <PlusIcon className="h-4 w-4" />
                                                     </button>
                                                 </div>
-                                                <p className="p-3 font-bold text-2xl text-right">₦{item.price}</p>
+                                                <p className="p-3 font-bold text-2xl text-right">₦ {item.price * item.qty}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -168,7 +167,7 @@ export default function CartItems(){
                     <div className="flex flex-col gap-5 py-5 mt-5 text-sm">
                         <div className="flex justify-between gap-3 items-center">
                             <p>Sub Total</p>
-                            <p className="font-bold">₦ 2,000</p>
+                            <p className="font-bold">₦ {totalPrice}</p>
                         </div>
 
                         <div className="flex justify-between gap-3 items-center">

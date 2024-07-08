@@ -11,6 +11,7 @@ import { HotDishes, Snacks, Soups,
 
 type CartContextType = {
     cart: Array<Cart>;
+    totalPrice: number;
     cartState: Array<Data>;
     addToCart: (id: number, menu:string) => void;
     removeFromCart: (id: string) => void;
@@ -21,6 +22,7 @@ type CartContextType = {
 const CartContext = createContext<CartContextType>({
     cart: [],
     cartState: [],
+    totalPrice: 0,
     addToCart: function (id: number, menu: string): void {
         throw new Error("Function not implemented.");
     },
@@ -39,6 +41,8 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
 
     const [cart, setCart] = useState(Array<Cart>)
     const [ cartState, setCartState ] = useState(Array<Data>)
+    const [ totalPrice, setTotalPrice ] = useState<number>(0)
+
     const router = useRouter()
 
     const addToCart = (id:number, menu:string) => {
@@ -173,11 +177,16 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
             const productList = getProduct(menuType.menu);
             updateStateWithMenuProducts(menuType.menu, menuType, productList);
         })
-    }, [cart])
+
+        // Calculate the total price of the cart
+        const total = cartState.reduce((acc, item) => acc + item.price * item.qty, 0);
+        setTotalPrice(total);
+    }, [cart, cartState])
 
     return (
         <CartContext.Provider 
-        value={{ cart, addToCart, cartState, removeFromCart, addReduceProductQuantity, clearCart }}>
+        value={{ cart, addToCart, cartState, totalPrice,
+        removeFromCart, addReduceProductQuantity, clearCart }}>
             {children}
         </CartContext.Provider>
     )
