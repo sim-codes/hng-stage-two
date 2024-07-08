@@ -2,13 +2,14 @@ import { ChevronRightIcon, XMarkIcon, MinusIcon, PlusIcon } from "@heroicons/rea
 import { HeartIcon, TrashIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import SaveDelicacies from "../ui/cart/saved"
+import Link from "next/link"
 
 export default function Cart() {
     return (
         <section className="flex flex-col justify-center max-w-screen">
             <div className="bg-[#F6F7F9] md:p-24 lg:p-24">
                 <h1 className="flex gap-3 items-center text-bold px-5 my-5">
-                    Home 
+                    <Link href="/">Home</Link>
                     <ChevronRightIcon className="h-4 w-4" />
                      Menu 
                      <ChevronRightIcon className="h-4 w-4" />
@@ -85,6 +86,9 @@ export default function Cart() {
                                     <p className="p-3 font-bold text-2xl text-right">$38.00</p>
                                     </div>
                                 </div>
+
+                                <hr className="border my-8" />
+
                                 <div className="my-3">
                                     <div className="md:flex lg:flex items-center justify-center gap-2">
                                     <div className="flex gap-3">
@@ -138,6 +142,8 @@ export default function Cart() {
                                     <p className="p-3 font-bold text-2xl text-right">$38.00</p>
                                     </div>
                                 </div>
+
+                                <hr className="border my-8" />
                             </div>
 
                             <div className="block md:hidden lg:hidden">
@@ -282,9 +288,9 @@ export default function Cart() {
                                 </div>
                             </div>
 
-                            <button className="bg-primary text-white text-sm w-full rounded-lg p-2">
+                            <Link href="/checkout" className="bg-primary text-white text-center text-sm w-full rounded-lg p-2">
                                 Proceed to Checkout
-                            </button>
+                            </Link>
                             <button className="text-primary bg-[#FFF2ED] text-sm w-full rounded-lg p-2">
                                 Pair Deliver With Other Users
                             </button>

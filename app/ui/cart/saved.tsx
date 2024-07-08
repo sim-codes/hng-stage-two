@@ -9,7 +9,7 @@ export default function SaveDelicacies() {
         <section className="self-stretch p-5 md:px-24 lg:px-24 mb-5">
             <div className="flex justify-between">
                 <h2 className="font-bold text-2xl">Saved delicacies</h2>
-                <button className="flex justify-center items-center gap-2 rounded-md text-gray-400 underline font-bold max-w-40 p-2">
+                <button className="flex justify-center items-center gap-2 rounded-md text-gray-400 font-bold max-w-40 p-2">
                     sell all offers
                 </button>
             </div>

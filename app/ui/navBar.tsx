@@ -167,7 +167,7 @@ export default function NavBar(){
                 {navOpen && (
                     <div className="bg-white w-[80%] md:hidden absolute z-20 top-0 right-0 p-3">
                         {isLogin && (
-                            <div className="flex items-center gap-3 mx-2 my-4">
+                            <div className="flex items-center gap-3 mx-2 my-4 -mb-5">
                                 <div className="bg-black rounded-full w-10 h-10"></div>
                                 <h1 className="font-bold text-lg">Ibrahim Michael</h1>
                             </div>
