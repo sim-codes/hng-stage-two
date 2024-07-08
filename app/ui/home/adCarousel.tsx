@@ -33,7 +33,7 @@ export default function AdCarousel() {
             setCurrentSlide((prev) => (prev + 1) % slides.length);
         }, 3000);
         return () => clearInterval(interval);
-    }, [currentSlide, slides.length]);
+    }, [currentSlide]);
 
     return (
         <section className="md:p-24 lg:p-24 overflow-hidden text-[#757575]">

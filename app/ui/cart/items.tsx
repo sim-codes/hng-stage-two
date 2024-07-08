@@ -22,7 +22,7 @@ export default function CartItems(){
                     
                     <div className="flex justify-between items-center gap-10">
                         <div className="flex items-center gap-2">
-                            <input type="checkbox" name="" id="" />
+                            {/* <input type="checkbox" name="" id="" /> */}
                             <p className="flex gap-1 items-center font-bold">Number of Items in Cart
                                 <span className="text-white bg-primary rounded-full 
                                     w-6 h-6 flex items-center justify-center text-sm">{cartState.length}
@@ -37,14 +37,14 @@ export default function CartItems(){
                         
                         {
                             cartState.length === 0 ? (
-                                <div className="flex justify-center items-center gap-2">
+                                <div className="flex flex-col justify-center items-center gap-5">
                                     <p className="text-center">No item in cart</p>
-                                    <Link href="/meals" className="bg-primary text-white p-2 rounded-lg text-sm">
+                                    <Link href="/" className="bg-primary text-white p-2 rounded-lg text-sm">
                                         Continue Shopping
                                     </Link>
                                 </div>
                             ) : cartState.map((item) => (
-                                <div className="my-3">
+                                <div className="my-3" key={item.id}>
                                     <div className="md:flex lg:flex items-center justify-center gap-2">
                                     <div className="flex gap-3">
                                         <input
@@ -102,14 +102,14 @@ export default function CartItems(){
                     <div className="block md:hidden lg:hidden">
                         {
                             cartState.length === 0 ? (
-                                <div className="flex justify-center items-center gap-2">
+                                <div className="flex flex-col justify-center items-center gap-5">
                                     <p className="text-center">No item in cart</p>
-                                    <Link href="/meals" className="bg-primary text-white p-2 rounded-lg text-sm">
+                                    <Link href="/" className="bg-primary text-white p-2 rounded-lg text-sm">
                                         Continue Shopping
                                     </Link>
                                 </div>
                             ) : cartState.map((item) => (
-                                <div className="my-3">
+                                <div className="my-3" key={item.id}>
                                     <div className="flex items-center justify-center gap-2">
                                     <div className="flex gap-3">
                                         <input
