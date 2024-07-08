@@ -173,7 +173,7 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
             const productList = getProduct(menuType.menu);
             updateStateWithMenuProducts(menuType.menu, menuType, productList);
         })
-    }, [updateStateWithMenuProducts])
+    }, [cart])
 
     return (
         <CartContext.Provider 

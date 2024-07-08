@@ -244,24 +244,28 @@ export const Drinks = [
         name: "Soft Drinks",
         price: 5,
         image: "/images/drinks.png",
+        description: "A refreshing blend of soft drinks, offering a light and delicious drink."
     },
     {
         id: 2,
         name: "Energy Drinks",
         price: 5,
         image: "/images/energy.png",
+        description: "A refreshing blend of energy drinks, offering a light and delicious drink."
     },
     {
         id: 3,
         name: "Fruit Juice",
         price: 5,
         image: "/images/fruitDrinks.png",
+        description: "A refreshing blend of fruit juice, offering a light and delicious drink."
     },
     {
         id: 4,
         name: "Packaged Juice",
         price: 5,
         image: "/images/packaged.png",
+        description: "A refreshing blend of packaged juice, offering a light and delicious drink."
     },
 ]
 
@@ -271,24 +275,28 @@ export const IceCreams = [
         name: "Fruit Icecream",
         price: 3000,
         image: "/images/fruitIcecream.png",
+        description: "A refreshing blend of fruit icecream, offering a light and delicious drink."
     },
     {
         id: 2,
         name: "Chocolate Icecream",
         price: 3000,
         image: "/images/chocolateIcecream.png",
+        description: "A refreshing blend of chocolate icecream, offering a light and delicious drink."
     },
     {
         id: 3,
         name: "Vaanila Flavour",
         price: 2500,
         image: "/images/icecream.png",
+        description: "A refreshing blend of vaanila icecream, offering a light and delicious drink."
     },
     {
         id: 4,
         name: "Fruit Yoghurt",
         price: 2500,
         image: "/images/yoghurt.png",
+        description: "A refreshing blend of fruit yoghurt, offering a light and delicious drink."
     },
 ]
 
@@ -319,7 +327,7 @@ export const Swallow = [
         name: "Fufu",
         price: 1000,
         image: "/images/fufu.png",
-        descriptiong: "A traditional Nigerian dish made with cassava flour, served with a rich soup or stew."
+        description: "A traditional Nigerian dish made with cassava flour, served with a rich soup or stew."
     },
 ]
 
