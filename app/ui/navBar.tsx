@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Logo } from "./Logo"
 import Link from "next/link"
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { ChevronDownIcon, Bars3BottomRightIcon, XMarkIcon, ChevronRightIcon, ArrowRightIcon } from "@heroicons/react/16/solid";
@@ -105,7 +106,9 @@ export default function NavBar(){
                                 </button>                                
                                 <button onClick={() => setMenuOpen(!menuOpen)}
                                     className="text-[#616161] hidden md:flex justify-center items-center gap-2">
-                                    <div className="bg-black rounded-full w-12 h-12"></div>
+                                    <div className="relative bg-black rounded-full w-12 h-12 overflow-hidden">
+                                        <Image src="/images/segun.png" alt="profile" className="object-cover" fill={true} />
+                                    </div>
                                     <ChevronDownIcon className="w-4 h-4" />
                                 </button>
 
@@ -152,7 +155,9 @@ export default function NavBar(){
                                         isLogin ? (
                                             <div className="">
                                                 <button className="text-[#616161] flex justify-center items-center gap-2">
-                                                    <div className="bg-black rounded-full w-12 h-12"></div>
+                                                    <div className="relative bg-black rounded-full w-12 h-12 overflow-hidden">
+                                                        <Image src="/images/segun.png" alt="profile" className="object-cover" fill={true} />
+                                                    </div>
                                                     <ChevronDownIcon className="w-4 h-4" />
                                                 </button>
                                             </div>
@@ -168,7 +173,9 @@ export default function NavBar(){
                     <div className="bg-white w-[80%] md:hidden absolute z-20 top-0 right-0 p-3">
                         {isLogin && (
                             <div className="flex items-center gap-3 mx-2 my-4 -mb-5">
-                                <div className="bg-black rounded-full w-10 h-10"></div>
+                                <div className="relative bg-black rounded-full w-10 h-10 overflow-hidden">
+                                    <Image src="/images/segun.png" alt="profile" className="object-cover" fill={true} />
+                                </div>
                                 <h1 className="font-bold text-lg">Ibrahim Michael</h1>
                             </div>
                         )}

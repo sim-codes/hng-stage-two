@@ -20,7 +20,9 @@ export default function ReviewsSection() {
             </p>
 
             <div className="w-full flex gap-2">
-              <div className="w-14 h-14 bg-black rounded-full"></div>
+              <div className="relative overflow-hidden w-14 h-14 bg-black rounded-full">
+                <Image src="/images/user.png" alt="profile" className="object-cover" fill={true} />
+              </div>
 
               <div className="flex items-start gap-10">
                 <div className="flex flex-col self-center">
