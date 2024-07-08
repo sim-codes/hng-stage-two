@@ -8,9 +8,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        acumin: ["var(--font-acumin)", "sans-serif"],
-      },
       colors: {
         primary: "#D13303",
         secondary: "#FCD507",

@@ -5,7 +5,7 @@ import { Snack } from "@/app/lib/definitons"
 
 export default function OfferSection() {
     return (
-        <section className="self-stretch p-5 md:px-24 lg:px-24 mb-5">
+        <section className="self-stretch p-5 mb-5">
             <div className="flex justify-between items-center">
                 <h2 className="font-bold text-xl md:text-4xl lg:text-4xl">Recommended Offers</h2>
                 <button className="flex justify-center underline font-bold items-center gap-2 bg-transparent rounded-md text-gray-400 max-w-40 p-2">

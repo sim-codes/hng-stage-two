@@ -1,11 +1,16 @@
 import { ChevronRightIcon, ChevronDownIcon, PlusIcon } from "@heroicons/react/16/solid"
 import { UserIcon, LockClosedIcon, CalendarIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
+import { Metadata } from "next"
 import SaveDelicacies from "../ui/cart/saved"
 import nigIcon from "@/public/icons/nigeria.png"
 import Link from "next/link"
 
 import payIcon from "@/public/icons/pay.png"
+
+export const metadata: Metadata = {
+    title: 'Checkout',
+};
 
 export default function Checkout() {
     return (
@@ -147,7 +152,7 @@ export default function Checkout() {
                             </div>
 
                             <div className="grid mt-2">
-                                <button className="place-self-end bg-primary text-white w-2/4 md:w-1/4 lg:w-1/4 h-14 rounded-lg">
+                                <button className="place-self-end font-semibold bg-primary text-white w-2/4 md:w-1/4 lg:w-1/4 h-14 rounded-lg">
                                     Save Billing Address
                                 </button>
                             </div>
@@ -186,7 +191,7 @@ export default function Checkout() {
                             </div>
 
                             <div className="grid">
-                                <button className="place-self-end bg-primary text-white w-2/4 md:w-1/4 lg:w-1/4 h-14 rounded-lg">
+                                <button className="place-self-end bg-primary font-semibold text-white w-2/4 md:w-1/4 lg:w-1/4 h-14 rounded-lg">
                                     Change Address
                                 </button>
                             </div>
@@ -324,16 +329,15 @@ export default function Checkout() {
                             </div>
 
                             <button
-                                className="grid grid-cols-1 h-12 justify-items-center content-center bg-primary text-white text-center text-sm w-full rounded-lg p-2">
+                                className="grid grid-cols-1 h-12 justify-items-center font-semibold content-center bg-primary text-white text-center text-sm w-full rounded-lg p-2">
                                 Pay $718.08
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="w-full md:p-24 lg:p-24">
-                <SaveDelicacies />
-            </div>
+            
+            <SaveDelicacies />
         </section>
     )
 }

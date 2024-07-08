@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { ChevronDownIcon, Bars3BottomRightIcon, XMarkIcon, ChevronRightIcon, ArrowRightIcon } from "@heroicons/react/16/solid";
 import { ShoppingBagIcon, UsersIcon, UserIcon, ShoppingCartIcon, HeartIcon } from "@heroicons/react/24/outline";
+import mealIcon from "@/public/icons/meal.svg";
 
 
 const links = {
@@ -49,9 +50,9 @@ export default function NavBar(){
                     <div className="flex items-center justify-between h-20">
                         <div className="flex items-center">
                             <div className="flex-shrink-0">
-                                <Link href="/">
-                                    <Logo />
-                                </Link>
+                            <Link href="/">
+                                <Image src="/masterChef.png" alt="MasterChef Logo" width={100} height={100} />
+                            </Link>
                             </div>
                         </div>
                         <div className="hidden md:flex items-center justify-between gap-5">
@@ -62,22 +63,22 @@ export default function NavBar(){
                                     }
                                     )}>Home
                                 </Link>
-                                {/* <Link href="#" className={clsx("text-[#616161]"
+                                {/* <Link href="#" className={clsx("text-[#3B3533]"
                                         ,{
                                             "text-primary": pathname === links.about.href
                                         }
                                         )}
                                     >About
                                 </Link> */}
-                                <Link href="/meals" className={clsx("text-[#616161] flex justify-center items-center gap-2"
+                                <Link href="/meals" className={clsx("text-[#3B3533] flex justify-center items-center gap-2"
                                     ,{
                                         "text-primary": pathname === links.meals.href
                                     }
                                     )}
                                     >Meals
-                                    <ChevronDownIcon className="w-4 h-4" />
+                                    {/* <ChevronDownIcon className="w-4 h-4" /> */}
                                 </Link>
-                                {/* <Link href="#" className={clsx("text-[#616161] flex justify-center items-center gap-2"
+                                {/* <Link href="#" className={clsx("text-[#3B3533] flex justify-center items-center gap-2"
                                     ,{
                                         "text-primary": pathname === links.offers.href
                                     }
@@ -85,7 +86,7 @@ export default function NavBar(){
                                     >Offers
                                     <ChevronDownIcon className="w-4 h-4" />
                                 </Link> */}
-                                {/* <Link href="#" className={clsx("text-[#616161]"
+                                {/* <Link href="#" className={clsx("text-[#3B3533]"
                                         ,{
                                             "text-primary": pathname === links.contact.href
                                         }
@@ -97,7 +98,7 @@ export default function NavBar(){
                         </div>
                         {isLogin ? (
                             <div className="relative flex gap-6">
-                                <Link href="/cart" className="text-[#616161] hidden md:flex items-center justify-center bg-[#F6F6F6] rounded-full w-12 h-12">
+                                <Link href="/cart" className="text-[#3B3533] hidden md:flex items-center justify-center bg-[#F6F6F6] rounded-full w-12 h-12">
                                     <ShoppingCartIcon className="w-6 h-6" />
                                 </Link>
                                 
@@ -105,7 +106,7 @@ export default function NavBar(){
                                     <HeartIcon className="w-6 h-6" />
                                 </button>                                
                                 <button onClick={() => setMenuOpen(!menuOpen)}
-                                    className="text-[#616161] hidden md:flex justify-center items-center gap-2">
+                                    className="text-[#3B3533] hidden md:flex justify-center items-center gap-2">
                                     <div className="relative bg-black rounded-full w-12 h-12 overflow-hidden">
                                         <Image src="/images/segun.png" alt="profile" className="object-cover" fill={true} />
                                     </div>
@@ -115,7 +116,7 @@ export default function NavBar(){
                                 {menuOpen && (
                                     <div className="absolute bg-white p-5 w-56 top-14 z-10 right-0">
                                         <button onClick={() => setIsLogin(false)}
-                                            className="flex justify-center items-center gap-3 bg-primary text-white rounded-lg p-4 w-auto h-12">
+                                            className="flex justify-center items-center gap-3 font-semibold bg-primary text-white rounded-lg p-4 w-auto h-12">
                                             Logout
                                             <ArrowRightIcon className="w-4 h-4" />
                                         </button>
@@ -130,18 +131,18 @@ export default function NavBar(){
                                     Sign up
                                     <ArrowRightIcon className="w-4 h-4" />
                                 </button> */}
-                                <Link href="/cart" className="text-[#616161] hidden md:flex items-center justify-center bg-[#F6F6F6] rounded-full w-12 h-12">
+                                <Link href="/cart" className="text-[#3B3533] hidden md:flex items-center justify-center bg-[#F6F6F6] rounded-full w-12 h-12">
                                     <ShoppingCartIcon className="w-6 h-6" />
                                 </Link>
                                 <button onClick={() => setIsLogin(true)}
-                                    className="hidden md:flex justify-center items-center gap-3 bg-primary text-white rounded-lg p-4 w-auto h-12">
+                                    className="hidden md:flex justify-center items-center gap-3 font-semibold bg-primary text-white rounded-lg p-4 w-auto h-12">
                                     Login
                                     <ArrowRightIcon className="w-4 h-4" />
                                 </button>
                             </div>
                         )}               
                         <div className="md:hidden flex items-center">
-                            <Link href="/cart" className="text-[#616161] flex items-center justify-center bg-[#F6F6F6] rounded-full w-10 h-10">
+                            <Link href="/cart" className="text-[#3B3533] flex items-center justify-center bg-[#F6F6F6] rounded-full w-10 h-10">
                                 <ShoppingCartIcon className="w-4 h-4" />
                             </Link>
                             <button
@@ -154,7 +155,7 @@ export default function NavBar(){
                                     ) : (
                                         isLogin ? (
                                             <div className="">
-                                                <button className="text-[#616161] flex justify-center items-center gap-2">
+                                                <button className="text-[#3B3533] flex justify-center items-center gap-2">
                                                     <div className="relative bg-black rounded-full w-12 h-12 overflow-hidden">
                                                         <Image src="/images/segun.png" alt="profile" className="object-cover" fill={true} />
                                                     </div>
@@ -180,7 +181,7 @@ export default function NavBar(){
                             </div>
                         )}
                         <div className="grid gap-5 px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            <Link href="/" className={clsx("mt-8 flex justify-between text-[#616161]"
+                            <Link href="/" className={clsx("mt-8 flex justify-between text-[#3B3533]"
                                 ,{
                                     "text-primary": pathname === links.home.href
                                 }
@@ -201,13 +202,12 @@ export default function NavBar(){
                                 <ChevronRightIcon className="w-4 h-4" />
                             </Link> */}
                             <Link href="/meals" className={`flex justify-between 
-                                ${pathname === '/meals'? 'text-primary' : 'text-[#616161]'}`
+                                ${pathname === '/meals'? 'text-primary' : 'text-[#3B3533]]'}`
                                 }>
                                 <div className="flex gap-2">
-                                    <UsersIcon className="h-6 w-6" />
+                                    <Image src={mealIcon} alt="meal" width={30} height={30} />
                                     Meal
-                                </div>
-                                <ChevronRightIcon className="w-4 h-4" />
+                                </div>                                
                             </Link>
                             {/* <Link href="#" className={`flex justify-between 
                                 ${pathname === '/offers'? 'text-primary' : 'text-[#616161]'}`
@@ -248,17 +248,17 @@ export default function NavBar(){
                                         </div>
                                         <ChevronRightIcon className="w-4 h-4" />
                                     </Link> */}
-                                    {/* <Link href="#" className={`flex justify-between 
-                                        ${pathname === '/saved'? 'text-primary' : 'text-[#616161]'}`
+                                    <Link href="#" className={`flex justify-between 
+                                        ${pathname === '/saved'? 'text-primary' : 'text-[#3B3533]'}`
                                         }>
                                         <div className="flex gap-2">
                                             <HeartIcon className="h-6 w-6" />
                                             Saved Items
                                         </div>
                                         <ChevronRightIcon className="w-4 h-4" />
-                                    </Link> */}
+                                    </Link>
                                     <button onClick={() => setIsLogin(false)}
-                                        className="flex justify-center items-center gap-3 bg-primary text-white rounded-lg p-2 w-auto h-12">
+                                        className="flex justify-center items-center font-semibold gap-3 bg-primary text-white rounded-lg p-2 w-auto h-12">
                                             Logout
                                             <ArrowRightIcon className="w-4 h-4" />
                                     </button>
@@ -266,7 +266,7 @@ export default function NavBar(){
                                 
                             ): (
                                 <button onClick={() => setIsLogin(true)}
-                                    className="flex justify-center items-center gap-3 bg-primary text-white rounded-lg p-2 w-auto h-12">
+                                    className="flex justify-center items-center gap-3 font-semibold bg-primary text-white rounded-lg p-2 w-auto h-12">
                                     Login
                                     <ArrowRightIcon className="w-4 h-4" />
                                 </button>

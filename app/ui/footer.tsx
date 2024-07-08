@@ -1,6 +1,6 @@
 import { EnvelopeIcon } from "@heroicons/react/16/solid"
 import Image from "next/image"
-import { Logo } from "./Logo"
+import Link from "next/link"
 import Icons from "./icons"
 
 import mailIcon from "@/public/icons/mail.svg"
@@ -8,10 +8,12 @@ import telIcon from "@/public/icons/tel.svg"
 
 export  default function Footer(){
     return (
-        <footer className="bg-[#191716] max-w-screen text-white px-8 md:px-24 lg:px-24 py-5">
+        <footer className="bg-[#0A0200] max-w-screen text-white px-8 md:px-24 lg:px-24 py-5">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-10 w-full pb-5 text-sm mt-10">
                 <div className="">
-                    <Logo />
+                    <Link href="/">
+                        <Image src="/logoFooter.png" alt="MasterChef Logo" width={100} height={100} />
+                    </Link>
                     <p className="">
                         From fluffy pastries to delicious meals, we pride ourselves 
                         on using only the finest ingredients to create mouthwatering 
@@ -49,7 +51,7 @@ export  default function Footer(){
                     </div>
                 </div>
                 <div className="flex flex-col gap-8">
-                    <h3 className="font-bold text-lg text-[#424242]">Follow us</h3>
+                    <h3 className="font-bold text-lg text-white">Follow us</h3>
                     
                     <Icons />
                     <p>Receive exclusive offers in your mailbox</p>

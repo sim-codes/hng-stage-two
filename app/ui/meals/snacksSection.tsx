@@ -2,10 +2,11 @@ import Image from "next/image"
 import { FeaturedMenu } from "@/app/lib/data"
 import { ShoppingCartIcon, CurrencyDollarIcon, ArrowRightIcon } from "@heroicons/react/24/outline"
 import { Snack } from "@/app/lib/definitons"
+import Link from "next/link"
 
 export default function SnackSection({ snacks, menu }: { snacks: Array<Snack>, menu: string}) {
     return (
-        <section className="self-stretch p-5 md:px-24 lg:px-24 mb-5">
+        <section className="self-stretch p-5 mb-5">
             <div className="flex justify-between">
                 <h2 className="font-bold text-2xl">{menu}</h2>
                 <button className="flex justify-center font-bold items-center gap-2 bg-transparent rounded-md text-gray-400 max-w-40 p-2">
@@ -25,10 +26,10 @@ export default function SnackSection({ snacks, menu }: { snacks: Array<Snack>, m
                             <div className="z-20 absolute bottom-14 left-0 w-full flex justify-between items-center gap-2 px-8">
                                 <p className="font-bold text-lg text-white">{menu.name}</p>
                                 
-                                <button className="flex w-24 gap-2 items-center justify-center p-1 border border-primary text-white text-sm bg-primary rounded-md">
+                                <Link href="/cart" className="flex w-24 gap-2 items-center justify-center p-1 border border-primary text-white text-sm bg-primary rounded-md">
                                     Buy
                                     <ShoppingCartIcon className="h-5 w-5" />
-                                </button>
+                                </Link>
                             </div>
 
                             <div className="z-20 absolute bottom-4 left-0 w-full flex justify-between items-center gap-2 px-8">

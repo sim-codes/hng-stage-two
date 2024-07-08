@@ -3,10 +3,11 @@ import { FeaturedMenu } from "@/app/lib/data"
 import { ShoppingCartIcon, HeartIcon } from "@heroicons/react/24/outline"
 import { StarIcon, TagIcon, ClockIcon, ArrowRightIcon } from "@heroicons/react/16/solid"
 import clsx from "clsx"
+import Link from "next/link"
 
 export default function SaveDelicacies() {
     return (
-        <section className="self-stretch p-5 md:px-24 lg:px-24 mb-5">
+        <section className="self-stretch p-5 mb-5">
             <div className="flex justify-between">
                 <h2 className="font-bold text-2xl">Saved delicacies</h2>
                 <button className="flex justify-center items-center gap-2 rounded-md text-gray-400 font-bold max-w-40 p-2">
@@ -53,10 +54,10 @@ export default function SaveDelicacies() {
                         <div className="self-stretch flex justify-between">
                             <p className="text-2xl font-bold">${menu.price}</p>
 
-                            <button className="flex gap-2 items-center p-1 border border-primary text-primary rounded-md">
+                            <Link href="/cart" className="flex gap-2 items-center p-1 border border-primary text-primary rounded-md">
                                 Add to Cart
                                 <ShoppingCartIcon className="h-5 w-5" />
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 ))}

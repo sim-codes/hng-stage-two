@@ -16,8 +16,8 @@ export default function Carousel({ slides }: {slides: Array<Slide>}) {
     }, [currentSlide]);
     
     return (
-        <div className="relative w-screen h-[512px] flex-col justify-center items-center
-        bg-black md:w-[1200px] md:h-[705px] lg:w-[1200px] lg:h-[705px] lg:rounded-2xl overflow-hidden">
+        <div className="relative w-full h-[512px] grid grid-cols-1
+        bg-black md:h-[705px] lg:h-[705px] lg:rounded-2xl overflow-hidden">
             {slides.map((slide, index) => (
                 <div
                 key={index}

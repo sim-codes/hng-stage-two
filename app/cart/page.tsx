@@ -1,14 +1,19 @@
 import { ChevronRightIcon, XMarkIcon, MinusIcon, PlusIcon } from "@heroicons/react/16/solid"
 import { HeartIcon, TrashIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
+import { Metadata } from "next"
 import SaveDelicacies from "../ui/cart/saved"
 import Link from "next/link"
 
+export const metadata: Metadata = {
+    title: 'Cart',
+};
+
 export default function Cart() {
     return (
-        <section className="flex flex-col justify-center max-w-screen">
-            <div className="bg-[#F6F7F9] md:p-24 lg:p-24">
-                <h1 className="flex gap-3 items-center text-bold px-5 my-5">
+        <section className="flex flex-col justify-center max-w-screen md:px-24 lg:px-24">
+            <div className="bg-[#fff] md:bg-[#F9FAFB] lg:bg-[#F9FAFB]">
+                <h1 className="flex gap-3 items-center text-bold px-5 my-12">
                     <Link href="/">Home</Link>
                     <ChevronRightIcon className="h-4 w-4" />
                      Menu 
@@ -68,7 +73,7 @@ export default function Cart() {
                                         </div>
                                     </div>
 
-                                    <button className="min-w-36 flex items-center justify-center gap-2 bg-primary text-white p-2 rounded-lg text-sm">
+                                    <button className="min-w-36 flex items-center justify-center font-semibold gap-2 bg-primary text-white p-2 rounded-lg text-sm">
                                         <PlusIcon className="h-5 w-5" />
                                         Add Toppings
                                     </button>
@@ -124,7 +129,7 @@ export default function Cart() {
                                         </div>
                                     </div>
 
-                                    <button className="min-w-36 flex items-center justify-center gap-2 bg-primary text-white p-2 rounded-lg text-sm">
+                                    <button className="min-w-36 flex items-center justify-center gap-2 font-semibold bg-primary text-white p-2 rounded-lg text-sm">
                                         <PlusIcon className="h-5 w-5" />
                                         Add Toppings
                                     </button>
@@ -247,7 +252,7 @@ export default function Cart() {
                                             Remove
                                         </button>
 
-                                        <button className="min-w-32 flex items-center justify-center gap-2 bg-primary text-white p-2 rounded-lg text-sm">
+                                        <button className="min-w-32 flex items-center justify-center gap-2 font-semibold bg-primary text-white p-2 rounded-lg text-sm">
                                             <PlusIcon className="h-5 w-5" />
                                             Add Toppings
                                         </button>
@@ -288,10 +293,10 @@ export default function Cart() {
                                 </div>
                             </div>
 
-                            <Link href="/checkout" className="bg-primary text-white text-center text-sm w-full rounded-lg p-2">
+                            <Link href="/checkout" className="bg-primary text-white font-semibold text-center text-sm w-full rounded-lg p-2">
                                 Proceed to Checkout
                             </Link>
-                            <button className="text-primary bg-[#FFF2ED] text-sm w-full rounded-lg p-2">
+                            <button className="text-primary bg-[#FFF2ED] text-sm w-full font-semibold rounded-lg p-2">
                                 Pair Deliver With Other Users
                             </button>
 
@@ -306,9 +311,8 @@ export default function Cart() {
                     </div>
                 </div>
             </div>
-            <div className="w-full md:p-24 lg:p-24">
-                <SaveDelicacies />
-            </div>
+            
+            <SaveDelicacies />
         </section>
     )
 }
