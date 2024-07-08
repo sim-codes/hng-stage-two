@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 
 export default function Checkout() {
     return (
-        <section className="flex flex-col justify-center max-w-screen">
-            <div className="bg-[#F6F7F9] md:p-24 lg:p-24">
+        <section className="flex flex-col justify-center max-w-screen px-24">
+            <div className="bg-[#fff] md:bg-[#F9FAFB] lg:bg-[#F9FAFB]">
                 <h1 className="flex gap-3 items-center text-bold px-5 my-5">
                     <Link href="/">Home</Link>
                     <ChevronRightIcon className="h-4 w-4" />
