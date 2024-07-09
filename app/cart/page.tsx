@@ -1,7 +1,6 @@
-import { ChevronRightIcon, XMarkIcon, MinusIcon, PlusIcon } from "@heroicons/react/16/solid"
+import { ChevronRightIcon } from "@heroicons/react/16/solid"
 import HotDishesSection from "@/app/ui/featureSection"
 import { Metadata } from "next"
-import SaveDelicacies from "../ui/cart/saved"
 import Link from "next/link"
 import CartItems from "../ui/cart/items"
 
