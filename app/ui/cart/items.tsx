@@ -3,16 +3,14 @@
 import { useState, useEffect } from "react";
 import Image from "next/image"
 import { useCartState } from "../context";
-import { ChevronRightIcon, XMarkIcon, MinusIcon, PlusIcon } from "@heroicons/react/16/solid"
+import { XMarkIcon, MinusIcon, PlusIcon } from "@heroicons/react/16/solid"
 import { HeartIcon, TrashIcon } from "@heroicons/react/24/outline"
 import Link from "next/link"
-import { Cart } from "@/app/lib/definitons"
 
 
 
 export default function CartItems(){
-    const { cart, cartState, removeFromCart, addReduceProductQuantity, clearCart, totalPrice } = useCartState()
-    
+    const { cart, removeFromCart, addReduceProductQuantity, clearCart, totalPrice } = useCartState()
     
     
     return(
@@ -25,7 +23,7 @@ export default function CartItems(){
                             {/* <input type="checkbox" name="" id="" /> */}
                             <p className="flex gap-1 items-center font-bold">Number of Items in Cart
                                 <span className="text-white bg-primary rounded-full 
-                                    w-6 h-6 flex items-center justify-center text-sm">{cartState.length}
+                                    w-6 h-6 flex items-center justify-center text-sm">{cart.length}
                                 </span>
                             </p>
                         </div>
@@ -36,14 +34,14 @@ export default function CartItems(){
                     <div className="hidden md:hidden lg:block">
                         
                         {
-                            cartState.length === 0 ? (
+                            cart.length === 0 ? (
                                 <div className="flex flex-col justify-center items-center gap-5 my-10">
                                     <p className="text-center">No item in cart</p>
                                     <Link href="/" className="bg-primary text-white p-2 rounded-lg text-sm">
                                         Continue Shopping
                                     </Link>
                                 </div>
-                            ) : cartState.map((item) => (
+                            ) : cart.map((item) => (
                                 <div className="my-3" key={item.id}>
                                     <div className="lg:flex items-center justify-center gap-2">
                                     <div className="flex gap-3">
@@ -102,14 +100,14 @@ export default function CartItems(){
                     {/* For Mobile and Tablets */}
                     <div className="block lg:hidden">
                         {
-                            cartState.length === 0 ? (
+                            cart.length === 0 ? (
                                 <div className="flex flex-col justify-center items-center gap-5 my-10">
                                     <p className="text-center">No item in cart</p>
                                     <Link href="/" className="bg-primary text-white p-2 rounded-lg text-sm">
                                         Continue Shopping
                                     </Link>
                                 </div>
-                            ) : cartState.map((item) => (
+                            ) : cart.map((item) => (
                                 <div className="my-3" key={item.id}>
                                     <div className="flex flex-col items-stretch justify-center gap-2">
                                     <div className="flex gap-3">

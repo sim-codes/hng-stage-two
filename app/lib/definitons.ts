@@ -15,14 +15,6 @@ export type MenuData = {
     image: string;
 }
 
-export type Cart = {
-    data: Array<{
-        id: string;
-        qty: number;
-    }>;
-    menu: string;
-}
-
 export type Product = {
     id: string;
     name: string;
@@ -31,7 +23,7 @@ export type Product = {
     description: string;
 }
 
-export type Data = {
+export type Cart = {
     id: string;
     name: string;
     price: number;

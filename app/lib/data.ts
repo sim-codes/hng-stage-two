@@ -1,6 +1,6 @@
 export const FeaturedMenu = [
     {
-        id: generateRandomId(),
+        id: "h851kvsjp",
         name: "Chief Burger Meal",
         price: 38,
         offer: "20% off",
@@ -10,7 +10,7 @@ export const FeaturedMenu = [
         image: "/images/chiefBurger.png",
     },
     {
-        id: generateRandomId(),
+        id: "wvp5mt5ir,",
         name: "Jollof Rice",
         price: 38,
         offer: "15% off",
@@ -20,7 +20,7 @@ export const FeaturedMenu = [
         image: "/images/jollofRice.png",
     },
     {
-        id: generateRandomId(),
+        id: "xdc2ac35m",
         name: "Salads",
         price: 38,
         offer: "15% off",
@@ -30,7 +30,7 @@ export const FeaturedMenu = [
         image: "/images/salads.png",
     },
     {
-        id: generateRandomId(),
+        id: "ykkjvbqjs",
         name: "Soups",
         price: 38,
         offer: "15% off",
@@ -40,8 +40,8 @@ export const FeaturedMenu = [
         image: "/images/soups.png",
     },
     {
-        id: generateRandomId(),
-        name: "Rotissory Chicken",
+        id: "dfpv5wd01",
+        name: "44fjmha37",
         price: 38,
         offer: "15% off",
         delivery: "Fast",
@@ -50,7 +50,7 @@ export const FeaturedMenu = [
         image: "/images/chicken.png",
     },
     {
-        id: generateRandomId(),
+        id: "yv9hqkd3l",
         name: "Drinks",
         price: 38,
         offer: "15% off",
@@ -60,7 +60,7 @@ export const FeaturedMenu = [
         image: "/images/drinks.png",
     },
     {
-        id: generateRandomId(),
+        id: "3chbxozg6",
         name: "Ice Cream",
         price: 38,
         offer: "15% off",
@@ -70,7 +70,7 @@ export const FeaturedMenu = [
         image: "/images/icecream.png",
     },
     {
-        id: generateRandomId(),
+        id: "mr23h1kyx",
         name: "Swallow",
         price: 38,
         offer: "15% off",
@@ -83,28 +83,28 @@ export const FeaturedMenu = [
 
 export const Snacks = [
     {
-        id: generateRandomId(),
+        id: "nv175x6ff",
         name: "Chief Burger Meal",
         price: 13500,
         image: "/images/chiefBurger.png",
         description: "A hearty burger with a juicy beef patty, fresh veggies, melted cheese, plantain fries, and a local soft drink."
     },
     {
-        id: generateRandomId(),
+        id: "43dppemm7",
         name: "Egg Roll",
         price: 1000,
         image: "/images/eggRoll.png",
         description: "Crispy roll filled with seasoned beef or chicken, onions, and spices, perfect with spicy pepper sauce."
     },
     {
-        id: generateRandomId(),
+        id: "zzamc1oo3",
         name: "Shawarma",
         price: 3000,
         image: "/images/shawarma.png",
         description: "A wrap filled with seasoned beef or chicken, fresh veggies, and spicy sauce, perfect for a quick snack."
     },
     {
-        id: generateRandomId(),
+        id: "y205clb7j",
         name: "Chicken Pie",
         price: 1000,
         image: "/images/chickenPie.png",
@@ -115,28 +115,28 @@ export const Snacks = [
 
 export const Soups = [
     {
-        id: generateRandomId(),
+        id: "u4kyoiyoe",
         name: "Vegetable Soup",
         price: 2000,
         image: "/images/soups.png",
         description: "Nigerian Vegetable Soup is a flavorful blend of fresh local vegetables cooked in a rich broth with traditional spices, meats or fish, offering a hearty and nutritious dish."        
     },
     {
-        id: generateRandomId(),
+        id: "c5jeyi2lh",
         name: "Oha Soup",
         price: 2500,
         image: "/images/oha.png",
         description: "Oha Soup is a traditional Nigerian soup made with oha leaves, cocoyam, and assorted meats or fish, offering a rich and flavorful dish."
     },
     {
-        id: generateRandomId(),
+        id: "l737g82bn",
         name: "Egusi Soup",
         price: 2000,
         image: "/images/egusi.png",
         description: "Egusi Soup is a traditional Nigerian soup made with ground melon seeds, vegetables, and assorted meats or fish, offering a rich and flavorful dish."
     },
     {
-        id: generateRandomId(),
+        id: "8aqzph527",
         name: "Okro Soup",
         price: 1500,
         image: "/images/okro.png",
@@ -146,28 +146,28 @@ export const Soups = [
 
 export const MealsMenu = [
     {
-        id: generateRandomId(),
+        id: "h0703q03f",
         name: "Jollof Rice",
         price: 4000,
         image: "/images/jollofRice.png",
         description: "A flavorful blend of rice cooked in a rich tomato sauce with traditional spices, offering a hearty and delicious dish."
     },
     {
-        id: generateRandomId(),
+        id: "3cyksiq4r",
         name: "Fried Rice",
         price: 5500,
         image: "/images/friedRice.png",
         description: "A flavorful blend of rice cooked with vegetables, eggs, and assorted meats or fish, offering a hearty and delicious dish."
     },
     {
-        id: generateRandomId(),
+        id: "v30rk3doa",
         name: "Beans & Plantain",
         price: 3500,
         image: "/images/beansPlatain.png",
         description: "A traditional Nigerian dish made with beans cooked in a rich tomato sauce, served with fried plantains, offering a hearty and delicious meal."
     },
     {
-        id: generateRandomId(),
+        id: "iyt2zrhmd",
         name: "Noodles",
         price: 3500,
         image: "/images/noodle.png",
@@ -177,7 +177,7 @@ export const MealsMenu = [
 
 export const Salads = [
     {
-        id: generateRandomId(),
+        id: "yk1571ur7",
         name: "Chicken Salad",
         price: 5000,
         image: "/images/salads.png",
@@ -185,21 +185,21 @@ export const Salads = [
 
     },
     {
-        id: generateRandomId(),
+        id: "st36btme4",
         name: "Coleslaw Salad",
         price: 3500,
         image: "/images/colseLaw.png",
         description: "A fresh salad with shredded cabbage, carrots, and a tangy dressing, perfect for a light meal."
     },
     {
-        id: generateRandomId(),
+        id: "dhj3h46h5",
         name: "Vegetable Salad",
         price: 4000,
         image: "/images/vegetableSalad.png",
         description: "A fresh salad with fresh veggies, and a tangy dressing, perfect for a light meal."
     },
     {
-        id: generateRandomId(),
+        id: "sutdualky",
         name: "Fruit Salad",
         price: 5000,
         image: "/images/fruitSalad.png",
@@ -209,28 +209,28 @@ export const Salads = [
 
 export const Coffees = [
     {
-        id: generateRandomId(),
+        id: "mroxni1uy",
         name: "Decaf Coffee",
         price: 1000,
         image: "/images/decaf.png",
         description: "A rich and flavorful blend of decaffeinated coffee, offering a smooth and delicious drink."
     },
     {
-        id: generateRandomId(),
+        id: "p6st4gd3a",
         name: "Fresh Mint Tea",
         price: 1000,
         image: "/images/mint.png",
         description: "A refreshing blend of fresh mint leaves, offering a light and delicious drink."
     },
     {
-        id: generateRandomId(),
+        id: "p6st3a4gd",
         name: "Chocolate Tea",
         price: 1500,
         image: "/images/chocolate.png",
         description: "A rich and flavorful blend of chocolate tea, offering a smooth and delicious drink."
     },
     {
-        id: generateRandomId(),
+        id: "ks8os0ewu",
         name: "Black Coffee",
         price: 1000,
         image: "/images/black.png",
@@ -240,28 +240,28 @@ export const Coffees = [
 
 export const Drinks = [
     {
-        id: generateRandomId(),
+        id: "s8ysrusfs",
         name: "Soft Drinks",
         price: 5,
         image: "/images/drinks.png",
         description: "A refreshing blend of soft drinks, offering a light and delicious drink."
     },
     {
-        id: generateRandomId(),
+        id: "eouwsjfsk3s",
         name: "Energy Drinks",
         price: 5,
         image: "/images/energy.png",
         description: "A refreshing blend of energy drinks, offering a light and delicious drink."
     },
     {
-        id: generateRandomId(),
+        id: "usds98hrjw",
         name: "Fruit Juice",
         price: 5,
         image: "/images/fruitDrinks.png",
         description: "A refreshing blend of fruit juice, offering a light and delicious drink."
     },
     {
-        id: generateRandomId(),
+        id: "srhsiuk43w4r",
         name: "Packaged Juice",
         price: 5,
         image: "/images/packaged.png",
@@ -271,28 +271,28 @@ export const Drinks = [
 
 export const IceCreams = [
     {
-        id: generateRandomId(),
+        id: "aeid983243s",
         name: "Fruit Icecream",
         price: 3000,
         image: "/images/fruitIcecream.png",
         description: "A refreshing blend of fruit icecream, offering a light and delicious drink."
     },
     {
-        id: generateRandomId(),
+        id: "sud847808",
         name: "Chocolate Icecream",
         price: 3000,
         image: "/images/chocolateIcecream.png",
         description: "A refreshing blend of chocolate icecream, offering a light and delicious drink."
     },
     {
-        id: generateRandomId(),
+        id: "s897hkj3w8z4",
         name: "Vaanila Flavour",
         price: 2500,
         image: "/images/icecream.png",
         description: "A refreshing blend of vaanila icecream, offering a light and delicious drink."
     },
     {
-        id: generateRandomId(),
+        id: "s8y337sdw8z4",
         name: "Fruit Yoghurt",
         price: 2500,
         image: "/images/yoghurt.png",
@@ -302,28 +302,28 @@ export const IceCreams = [
 
 export const Swallow = [
     {
-        id: generateRandomId(),
+        id: "dj97sw4nzd",
         name: "Swallow",
         price: 1000,
         image: "/images/swallow.png",
         description: "A traditional Nigerian dish made with cassava flour, served with a rich soup or stew."
     },
     {
-        id: generateRandomId(),
+        id: "dd78ygd3s0a",
         name: "Semo",
         price: 1000,
         image: "/images/semo.png",
         description: "A traditional Nigerian dish made with semolina flour, served with a rich soup or stew."
     },
     {
-        id: generateRandomId(),
+        id: "dbus74sds8",
         name: "Amala",
         price: 1000,
         image: "/images/amala.png",
         description: "A traditional Nigerian dish made with yam flour, served with a rich soup or stew."
     },
     {
-        id: generateRandomId(),
+        id: "udb9dsdbw390",
         name: "Fufu",
         price: 1000,
         image: "/images/fufu.png",
@@ -333,19 +333,19 @@ export const Swallow = [
 
 export const Offers = [
     {
-        id: generateRandomId(),
+        id: "d8s7d8s7d",
         name: "Chicken Wings with Chips",
         category: "Fries",
         image: "/images/chickenWings.png",
     },
     {
-        id: generateRandomId(),
+        id: "djisdsdhudsi33",
         name: "Spaghetti with Salad",
         category: "Veggies",
         image: "/images/spaghettiSalad.png",
     },
     {
-        id: generateRandomId(),
+        id: "sjdis793u378ags",
         name: "Chinese Rice",
         category: "Rice",
         image: "/images/chineseRice.png",
@@ -354,7 +354,7 @@ export const Offers = [
 
 export const HotDishes = [
     {
-        id: generateRandomId(),
+        id: "su78gb4s9x0ssd",
         name: "Jollof Rice",
         price: 3500,
         image: "/images/jollofRice.png",
@@ -365,7 +365,7 @@ export const HotDishes = [
         description: "A flavorful blend of rice cooked in a rich tomato sauce with traditional spices, offering a hearty and delicious dish."
     },
     {
-        id: generateRandomId(),
+        id: "bdu9s87dbsd",
         name: "Oha Soup",
         price: 4000,
         image: "/images/oha.png",
@@ -376,7 +376,7 @@ export const HotDishes = [
         description: "A traditional Nigerian soup made with oha leaves, cocoyam, and assorted meats or fish, offering a rich and flavorful dish."
     },
     {
-        id: generateRandomId(),
+        id: "787dsygdsffs7",
         name: "Vegetable Salad",
         price: 3000,
         image: "/images/vegetableSalad.png",
@@ -387,7 +387,7 @@ export const HotDishes = [
         description: "A fresh salad with fresh veggies, and a tangy dressing, perfect for a light meal."
     },
     {
-        id: generateRandomId(),
+        id: "dubds8gydsjd882732r",
         name: "Semo",
         price: 1000,
         image: "/images/semo.png",
@@ -399,6 +399,3 @@ export const HotDishes = [
     },
 ]
 
-function generateRandomId(): string {
-    return Math.random().toString(36).substr(2, 9);
-}

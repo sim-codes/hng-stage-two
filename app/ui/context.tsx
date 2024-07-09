@@ -1,7 +1,7 @@
 "use client";
 
-import {useState, useEffect, createContext, useContext} from "react"
-import { Cart, Data, Product } from "@/app/lib/definitons"
+import {useState, createContext, useContext} from "react"
+import { Cart } from "@/app/lib/definitons"
 import { HotDishes, Snacks, Soups,
     MealsMenu, Salads, Drinks, IceCreams, Swallow, Coffees
  } from "@/app/lib/data";
@@ -12,8 +12,7 @@ import { HotDishes, Snacks, Soups,
 type CartContextType = {
     cart: Array<Cart>;
     totalPrice: number;
-    cartState: Array<Data>;
-    addToCart: (id: string, menu:string) => void;
+    addToCart: (itemId: string) => void;
     removeFromCart: (id: string) => void;
     addReduceProductQuantity: (id: string, action: string) => void;
     clearCart: () => void;
@@ -21,9 +20,8 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType>({
     cart: [],
-    cartState: [],
     totalPrice: 0,
-    addToCart: function (id: string, menu: string): void {
+    addToCart: function (id: string): void {
         throw new Error("Function not implemented.");
     },
     removeFromCart: function (id: string): void {
@@ -40,7 +38,6 @@ const CartContext = createContext<CartContextType>({
 export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
 
     const [cart, setCart] = useState(Array<Cart>)
-    const [ cartState, setCartState ] = useState(Array<Data>)
     const [ totalPrice, setTotalPrice ] = useState<number>(0)
 
     const combinedList = [
@@ -51,80 +48,46 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
 
     const router = useRouter()
 
-    const addToCart = (id:string, menu:string) => {
-        // Check if the menu already exists in the cart
-        const menuExist = cart.find((item) => item.menu === menu);
+    const addToCart = (itemId: string) => {
     
-        if (menuExist) {
-            // Menu exists, check if item with the same id exists
-            const exist = menuExist.data.find((item) => item.id === id);
+        // Find the item in itemsList based on itemId
+        const selectedItem = combinedList.find(item => item.id === itemId);
     
-            if (exist) {
+        if (selectedItem) {
+            // Check if the item already exists in the cart
+            const existingItem = cart.find(item => item.id === itemId);
+    
+            if (existingItem) {
                 // Item with the same id exists, update its quantity
-                const updatedCart = cart.map((item) => {
-                    if (item.menu === menu && item.data.some((itemData) => itemData.id === id)) {
-                        return {
-                            ...item,
-                            data: item.data.map((itemData) =>
-                                itemData.id === id ? { ...itemData, qty: itemData.qty + 1 } : itemData
-                            ),
-                        };
-                    } else {
-                        return item;
-                    }
-                });
-                setCart(updatedCart);
-            } else {
-                // Item with the same menu but different id, add new item
-                const updatedCart = cart.map((item) =>
-                    item.menu === menu ? { ...item, data: [...item.data, { id, qty: 1 }] } : item
+                const updatedCart = cart.map(item =>
+                    item.id === itemId ? { ...item, qty: item.qty + 1 } : item
                 );
                 setCart(updatedCart);
+            } else {
+                // Item does not exist in the cart, add new item
+                const newItem: Cart = {
+                    id: selectedItem.id,
+                    name: selectedItem.name,
+                    price: selectedItem.price,
+                    qty: 1,
+                    image: selectedItem.image,
+                    description: selectedItem.description,
+                };
+                const updatedCart = [...cart, newItem];
+                setCart(updatedCart);
             }
+
+            // Update the total price
+            setTotalPrice(totalPrice + selectedItem.price);
+            
+            // Navigate to the cart page
+            return router.push('/cart');
         } else {
-            // Menu does not exist in the cart, add new menu and item
-            setCart([...cart, { menu, data: [{ id, qty: 1 }] }]);
+            console.error(`Item with id ${itemId} not found in itemsList.`);
         }
-    
-        return router.push('/cart')
     };
     
-
-    // find the items in the cart
-    function updateStateWithMenuProducts(menu: string, menuType: Cart, products: Product[]) {
-
-        // Check if the cart's menu matches the given menu name
-        if (menuType.menu === menu) {
-            // Iterate through the cart data
-            menuType.data.forEach(cartItem => {
-                // Find the product details by id
-                const product = products.find(p => p.id === cartItem.id);
-                if (product) {
-                    // Add the product details with quantity to the state
-                    const existingProduct = cartState.find(p => p.name === product.name);
-
-                    if (!existingProduct) {
-                        // If it exists, update the quantity
-                        // existingProduct.qty += cartItem.qty;
-                        // If it doesn't exist, add it to the state with a random id
-                        setCartState([...cartState, {
-                            id: generateRandomId(),
-                            name: product.name,
-                            price: product.price,
-                            qty: cartItem.qty,
-                            image: product.image,
-                            description: product.description,
-                        }]);
-                    }
-                }
-            });
-        }
-    }
-
-    function generateRandomId(): string {
-        return Math.random().toString(36).substr(2, 9);
-    }
-
+    
     const getProduct = (name: string) => {
         switch (name) {
             case "Meals":
@@ -150,21 +113,26 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
 
     // remove item from the setState variable
     const removeFromCart = (id: string) => {
-        setCartState(cartState.filter(item => item.id !== id))
-        // update price
-        setTotalPrice(cartState.reduce((acc, item) => acc + item.price * item.qty, 0))
+        // Filter out the item with the specified id
+        const updatedCart = cart.filter(item => item.id !== id);
+    
+        // Calculate the updated total price
+        const updatedTotalPrice = updatedCart.reduce((total, item) => total + item.price, 0);
+    
+        // Update the cart and the total price in state
+        setCart(updatedCart);
+        setTotalPrice(updatedTotalPrice);  // Assuming setTotalPrice is your setter for the total price state
     }
 
     // clear cart
     const clearCart = () => {
-        setCartState([])
         setCart([])
         setTotalPrice(0)
     }
 
     // update product quantity in the setState variable
     const addReduceProductQuantity = (id: string, action: string) => {
-        const updatedCart = cartState.map(item => {
+        const updatedCart = cart.map(item => {
             if (item.id === id) {
                 if (action === "add" && item.qty < 10) {
                     item.qty += 1
@@ -174,25 +142,25 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
             }
             return item
         })
-        setCartState(updatedCart)
+        setCart(updatedCart)
         // update price
-        setTotalPrice(cartState.reduce((acc, item) => acc + item.price * item.qty, 0))
+        setTotalPrice(cart.reduce((acc, item) => acc + item.price * item.qty, 0))
     }
 
-    useEffect(() => {
-        cart.forEach(menuType => {
-            const productList = getProduct(menuType.menu);
-            updateStateWithMenuProducts(menuType.menu, menuType, productList);
-            setTotalPrice((prev) => prev + menuType.data.reduce((acc, item) => {
-                const product = productList.find(p => p.id === item.id);
-                return acc + (product ? product.price * item.qty : 0);
-            }, 0));
-        })
-    }, [cart])
+    // useEffect(() => {
+    //     cart.forEach(menuType => {
+    //         const productList = getProduct(menuType.menu);
+    //         updateStateWithMenuProducts(menuType.menu, menuType, productList);
+    //         setTotalPrice((prev) => prev + menuType.data.reduce((acc, item) => {
+    //             const product = productList.find(p => p.id === item.id);
+    //             return acc + (product ? product.price * item.qty : 0);
+    //         }, 0));
+    //     })
+    // }, [cart])
 
     return (
         <CartContext.Provider 
-        value={{ cart, addToCart, cartState, totalPrice,
+        value={{ cart, addToCart, totalPrice,
         removeFromCart, addReduceProductQuantity, clearCart }}>
             {children}
         </CartContext.Provider>

@@ -1,7 +1,6 @@
 import Image from "next/image"
 import { Offers } from "@/app/lib/data"
-import { ShoppingCartIcon, CurrencyDollarIcon, ArrowRightIcon } from "@heroicons/react/24/outline"
-import { Snack } from "@/app/lib/definitons"
+import { ArrowRightIcon } from "@heroicons/react/24/outline"
 
 export default function OfferSection() {
     return (

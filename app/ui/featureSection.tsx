@@ -5,12 +5,10 @@ import { HotDishes } from "@/app/lib/data"
 import { ShoppingCartIcon, HeartIcon } from "@heroicons/react/24/outline"
 import { StarIcon, TagIcon, ClockIcon, ArrowRightIcon } from "@heroicons/react/16/solid"
 import clsx from "clsx"
-import Link from "next/link"
-import { Cart } from "@/app/lib/definitons"
 import { useCartState } from "@/app/ui/context"
 
 export default function HotDishesSection() {
-    const {addToCart, cart } = useCartState()
+    const {addToCart } = useCartState()
 
     return (
         <section className="self-stretch p-5 mb-5">
@@ -61,7 +59,7 @@ export default function HotDishesSection() {
                         <div className="self-stretch flex justify-between">
                             <p className="text-2xl font-bold">₦ {menu.price}</p>
 
-                            <button onClick={() => addToCart(menu.id, "HotDishes")}
+                            <button onClick={() => addToCart(menu.id)}
                              className="flex gap-2 items-center font-semibold p-1 border
                             hover:text-white hover:bg-primary border-primary text-primary rounded-md">
                                 Add to Cart
