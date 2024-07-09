@@ -81,7 +81,10 @@ export default function NavBar(){
 
                                 {menuOpen && (
                                     <div className="absolute bg-white p-5 w-56 top-14 z-10 right-0">
-                                        <button onClick={() => setIsLogin(false)}
+                                        <button onClick={() => {
+                                            setIsLogin(false)
+                                            setMenuOpen(!menuOpen)
+                                        }}
                                             className="flex justify-center items-center gap-3 font-semibold bg-primary text-white rounded-lg p-4 w-auto h-12">
                                             Logout
                                             <ArrowRightIcon className="w-4 h-4" />
@@ -112,10 +115,10 @@ export default function NavBar(){
                                 onClick={toggleNav}
                                 >
                                     {navOpen ? (
-                                        <XMarkIcon className="absolute z-30 right-5 h-6 w-6" />
+                                        <XMarkIcon className="absolute z-30 right-5 h-6 w-6 cursor-pointer transition-all" />
                                     ) : (
                                         isLogin ? (
-                                            <div className="">
+                                            <div className="cursor-pointer transition-all">
                                                 <button className="text-[#3B3533] flex justify-center items-center gap-2">
                                                     <div className="relative bg-black rounded-full w-12 h-12 overflow-hidden">
                                                         <Image src="/images/segun.png" alt="profile" className="object-cover" fill={true} />
@@ -124,7 +127,7 @@ export default function NavBar(){
                                                 </button>
                                             </div>
                                         ) : (
-                                            <Bars3BottomRightIcon className="h-6 w-6" />
+                                            <Bars3BottomRightIcon className="h-6 w-6 cursor-pointer transition-all" />
                                         )
                                     )}
                             </button>
@@ -132,7 +135,7 @@ export default function NavBar(){
                     </div>
                 </div>
                 {navOpen && (
-                    <div className="bg-white w-[80%] md:hidden absolute z-20 top-0 right-0 p-3">
+                    <div className="w-[90vw] bg-[#fff] md:hidden absolute z-20 top-2 right-0 p-3 transition-all">
                         {isLogin && (
                             <div className="flex items-center gap-3 mx-2 my-4">
                                 <div className="relative bg-black rounded-full w-10 h-10 overflow-hidden">
@@ -154,7 +157,10 @@ export default function NavBar(){
 
                             {isLogin ? (
                                 <>
-                                    <button onClick={() => setIsLogin(false)}
+                                    <button onClick={() => {
+                                        setIsLogin(false)
+                                        setNavOpen(!navOpen)
+                                    }}
                                         className="flex justify-center items-center font-semibold gap-3 bg-primary text-white rounded-lg p-2 w-auto h-12">
                                             Logout
                                             <ArrowRightIcon className="w-4 h-4" />
@@ -162,7 +168,10 @@ export default function NavBar(){
                                 </>
                                 
                             ): (
-                                <button onClick={() => setIsLogin(true)}
+                                <button onClick={() => {
+                                    setIsLogin(true)
+                                    setNavOpen(!navOpen)
+                                }}
                                     className="flex justify-center items-center gap-3 font-semibold bg-primary text-white rounded-lg p-2 w-auto h-12">
                                     Login
                                     <ArrowRightIcon className="w-4 h-4" />
