@@ -13,7 +13,7 @@ type CartContextType = {
     cart: Array<Cart>;
     totalPrice: number;
     cartState: Array<Data>;
-    addToCart: (id: number, menu:string) => void;
+    addToCart: (id: string, menu:string) => void;
     removeFromCart: (id: string) => void;
     addReduceProductQuantity: (id: string, action: string) => void;
     clearCart: () => void;
@@ -23,7 +23,7 @@ const CartContext = createContext<CartContextType>({
     cart: [],
     cartState: [],
     totalPrice: 0,
-    addToCart: function (id: number, menu: string): void {
+    addToCart: function (id: string, menu: string): void {
         throw new Error("Function not implemented.");
     },
     removeFromCart: function (id: string): void {
@@ -43,9 +43,15 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
     const [ cartState, setCartState ] = useState(Array<Data>)
     const [ totalPrice, setTotalPrice ] = useState<number>(0)
 
+    const combinedList = [
+        ...HotDishes, ...Snacks, ...Soups,
+        ...Salads, ...Coffees, ...Drinks,
+        ...Swallow,...IceCreams, ...MealsMenu
+    ]
+
     const router = useRouter()
 
-    const addToCart = (id:number, menu:string) => {
+    const addToCart = (id:string, menu:string) => {
         // Check if the menu already exists in the cart
         const menuExist = cart.find((item) => item.menu === menu);
     
@@ -152,6 +158,7 @@ export function Provider({ children }: Readonly<{ children: React.ReactNode}>) {
     // clear cart
     const clearCart = () => {
         setCartState([])
+        setCart([])
         setTotalPrice(0)
     }
 

@@ -57,37 +57,9 @@ export default function NavBar(){
                         </div>
                         <div className="hidden md:flex items-center justify-between gap-5">
                             <div className="ml-4 flex gap-10 items-center space-x-4">
-                                {/* <Link href="/" className={`flex justify-between 
-                                    ${pathname === '/'? 'text-primary' : 'text-[#3B3533]]'}`
-                                }>Home
-                                </Link> */}
-                                {/* <Link href="#" className={clsx("text-[#3B3533]"
-                                        ,{
-                                            "text-primary": pathname === links.about.href
-                                        }
-                                        )}
-                                    >About
-                                </Link> */}
-                                <Link href="/" className={`flex justify-between ${pathname === '/'? 'text-primary' : 'text-[#3B3533]]'}`
+                                <Link href="/" className={`flex ${pathname === '/'? 'text-primary' : 'text-[#3B3533]]'}`
                                     }>Meals
-                                    {/* <ChevronDownIcon className="w-4 h-4" /> */}
                                 </Link>
-                                {/* <Link href="#" className={clsx("text-[#3B3533] flex justify-center items-center gap-2"
-                                    ,{
-                                        "text-primary": pathname === links.offers.href
-                                    }
-                                    )}
-                                    >Offers
-                                    <ChevronDownIcon className="w-4 h-4" />
-                                </Link> */}
-                                {/* <Link href="#" className={clsx("text-[#3B3533]"
-                                        ,{
-                                            "text-primary": pathname === links.contact.href
-                                        }
-                                        )}
-                                    >
-                                    Contact
-                                </Link> */}
                             </div>
                         </div>
                         {isLogin ? (
@@ -120,11 +92,6 @@ export default function NavBar(){
                             </div>
                         ) : (
                             <div className="flex gap-4">
-                                {/* <button
-                                    className="hidden md:flex justify-center items-center gap-3 bg-[#FFF7F5] text-primary rounded-lg p-4 w-auto h-12">
-                                    Sign up
-                                    <ArrowRightIcon className="w-4 h-4" />
-                                </button> */}
                                 <Link href="/cart" className="text-[#3B3533] hidden md:flex items-center justify-center bg-[#F6F6F6] rounded-full w-12 h-12">
                                     <ShoppingCartIcon className="w-6 h-6" />
                                 </Link>
@@ -167,7 +134,7 @@ export default function NavBar(){
                 {navOpen && (
                     <div className="bg-white w-[80%] md:hidden absolute z-20 top-0 right-0 p-3">
                         {isLogin && (
-                            <div className="flex items-center gap-3 mx-2 my-4 -mb-5">
+                            <div className="flex items-center gap-3 mx-2 my-4">
                                 <div className="relative bg-black rounded-full w-10 h-10 overflow-hidden">
                                     <Image src="/images/segun.png" alt="profile" className="object-cover" fill={true} />
                                 </div>
@@ -175,80 +142,18 @@ export default function NavBar(){
                             </div>
                         )}
                         <div className="grid gap-5 px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            {/* <Link href="/" className={`flex justify-between 
-                                ${pathname === '/'? 'text-primary' : 'text-[#3B3533]]'}`
-                                }>
-                                <div className="flex gap-2">
-                                    <ShoppingBagIcon className="h-6 w-6" />
-                                    Home
-                                </div>
-                                <ChevronRightIcon className="w-4 h-4" />
-                            </Link> */}
-                            {/* <Link href="#" className={`flex justify-between 
-                                ${pathname === '/about'? 'text-primary' : 'text-[#616161]'}`
-                                }>
-                                <div className="flex gap-2">
-                                    <UsersIcon className="h-6 w-6" />
-                                    About
-                                </div>
-                                <ChevronRightIcon className="w-4 h-4" />
-                            </Link> */}
                             <Link href="/" className={`flex justify-between 
                                 ${pathname === '/'? 'text-primary' : 'text-[#3B3533]]'}`
                                 }>
                                 <div className="flex gap-2">
-                                    <Image src={mealIcon} alt="meal" width={30} height={30} />
-                                    Meal
-                                </div>                                
+                                <Image src={mealIcon} alt="meal" width={30} height={30} />
+                                    Meals
+                                </div>
+                                <ChevronRightIcon className="w-4 h-4" />
                             </Link>
-                            {/* <Link href="#" className={`flex justify-between 
-                                ${pathname === '/offers'? 'text-primary' : 'text-[#616161]'}`
-                                }>
-                                <div className="flex gap-2">
-                                    <UsersIcon className="h-6 w-6" />
-                                    Offers
-                                </div>
-                                <ChevronRightIcon className="w-4 h-4" />
-                            </Link> */}
-                            {/* <Link href="#" className={`flex justify-between 
-                                ${pathname === '/contact'? 'text-primary' : 'text-[#616161]'}`
-                                }>
-                                <div className="flex gap-2">
-                                    <UsersIcon className="h-6 w-6" />
-                                    Contact
-                                </div>
-                                <ChevronRightIcon className="w-4 h-4" />
-                            </Link> */}
 
                             {isLogin ? (
                                 <>
-                                    {/* <Link href="/cart" className={`flex justify-between 
-                                        ${pathname === '/order'? 'text-primary' : 'text-[#616161]'}`
-                                        }>
-                                        <div className="flex gap-2">
-                                            <ShoppingCartIcon className="h-6 w-6" />
-                                            Order
-                                        </div>
-                                        <ChevronRightIcon className="w-4 h-4" />
-                                    </Link> */}
-                                    {/* <Link href="#" className={`flex justify-between 
-                                        ${pathname === '/account'? 'text-primary' : 'text-[#616161]'}`
-                                        }>
-                                        <div className="flex gap-2">
-                                            <UserIcon className="h-6 w-6" />
-                                            Acount
-                                        </div>
-                                        <ChevronRightIcon className="w-4 h-4" />
-                                    </Link> */}
-                                    <Link href="#" className={`flex justify-between 
-                                        ${pathname === '/saved'? 'text-primary' : 'text-[#3B3533]'}`
-                                        }>
-                                        <div className="flex gap-2">
-                                            <HeartIcon className="h-6 w-6" />
-                                            Saved Items
-                                        </div>
-                                        <ChevronRightIcon className="w-4 h-4" />
-                                    </Link>
                                     <button onClick={() => setIsLogin(false)}
                                         className="flex justify-center items-center font-semibold gap-3 bg-primary text-white rounded-lg p-2 w-auto h-12">
                                             Logout

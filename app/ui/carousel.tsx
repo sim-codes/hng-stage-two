@@ -47,11 +47,11 @@ export default function Carousel({ slides }: {slides: Array<Slide>}) {
             </div>
 
             <button onClick={() => setCurrentSlide(currentSlide - 1 < 0 ? slides.length - 1 : currentSlide - 1)}
-                className="absolute hidden bg-white top-1/2 left-8 rounded-full p-3 md:block lg:block">
+                className="absolute z-30 hidden bg-white top-1/2 left-8 rounded-full p-3 md:hidden lg:block">
                 <ArrowLeftIcon className="h-8 w-8" />
             </button>
             <button onClick={() => setCurrentSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1)}
-            className="absolute hidden bg-[#FCD507] top-1/2 right-8 rounded-full p-3 md:block lg:block">
+            className="absolute z-30 hidden bg-[#FCD507] top-1/2 right-8 rounded-full p-3 md:hidden lg:block">
                 <ArrowRightIcon className="h-8 w-8 text-white" />
             </button>
         </div>

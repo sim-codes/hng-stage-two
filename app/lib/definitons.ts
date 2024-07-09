@@ -1,5 +1,3 @@
-import { List } from "postcss/lib/list";
-
 export type Slide = {
     imageUrl: string;
     slideText1: string;
@@ -10,8 +8,8 @@ export type CarouselProps = {
     slides: Array<Slide>;
 }
 
-export type Snack = {
-    id: number;
+export type MenuData = {
+    id: string;
     name: string;
     price: number;
     image: string;
@@ -19,14 +17,14 @@ export type Snack = {
 
 export type Cart = {
     data: Array<{
-        id: number;
+        id: string;
         qty: number;
     }>;
     menu: string;
 }
 
 export type Product = {
-    id: number;
+    id: string;
     name: string;
     price: number;
     image: string;

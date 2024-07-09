@@ -2,7 +2,7 @@ import { ChevronRightIcon, ChevronDownIcon, PlusIcon } from "@heroicons/react/16
 import { UserIcon, LockClosedIcon, CalendarIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import { Metadata } from "next"
-import SaveDelicacies from "../ui/cart/saved"
+import HotDishesSection from "../ui/featureSection"
 import nigIcon from "@/public/icons/nigeria.png"
 import Link from "next/link"
 
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 
 export default function Checkout() {
     return (
-        <section className="flex flex-col justify-center max-w-screen md:px-24 lg:px-24">
-            <div className="bg-[#fff] md:bg-[#F9FAFB] lg:bg-[#F9FAFB]">
+        <section className="flex flex-col justify-center max-w-screen">
+            <div className="bg-[#fff] lg:bg-[#F9FAFB] md:px-12 lg:px-24">
                 <h1 className="flex gap-3 items-center text-bold px-5 my-12">
                     <Link href="/">Meals</Link>
                      <ChevronRightIcon className="h-4 w-4" />
@@ -25,7 +25,7 @@ export default function Checkout() {
                 </h1>
 
                 <div className="bg-[#fff] rounded-lg p-10 my-14">
-                    <div className="grid grid-cols-1 md:grid-cols-6 gap-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-6 gap-10">
                         <div className="md:col-span-4 lg:col-span-4">
                             <div className="">
                                 <h1 className="text-2xl font-bold">Billing Details</h1>
@@ -195,7 +195,7 @@ export default function Checkout() {
                             </div>
                         </div>
 
-                        <div className=" order-first md:-order-first md:col-span-2 lg:col-span-2 w-full border-2 md:p-10 lg:p-10 p-5 rounded-lg">
+                        <div className=" order-first md:-order-first lg:col-span-2 w-full border-2 md:p-10 lg:p-10 p-5 rounded-lg">
                             <h1 className="font-bold text-2xl my-3">Payment Information</h1>
 
                             <div className="flex flex-col gap-3">
@@ -335,7 +335,7 @@ export default function Checkout() {
                 </div>
             </div>
             
-            <SaveDelicacies />
+            <HotDishesSection />
         </section>
     )
 }

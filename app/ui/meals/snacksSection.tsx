@@ -3,10 +3,10 @@
 import Image from "next/image"
 import { FeaturedMenu } from "@/app/lib/data"
 import { ShoppingCartIcon, CurrencyDollarIcon, ArrowRightIcon } from "@heroicons/react/24/outline"
-import { Snack } from "@/app/lib/definitons"
+import { MenuData } from "@/app/lib/definitons"
 import { useCartState } from "@/app/ui/context"
 
-export default function SnackSection({ snacks, menu }: { snacks: Array<Snack>, menu: string}) {
+export default function SnackSection({ snacks, menu }: { snacks: Array<MenuData>, menu: string}) {
     const {addToCart, cart } = useCartState()
     const menuType = menu
 

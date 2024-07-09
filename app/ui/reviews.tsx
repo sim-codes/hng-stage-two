@@ -6,7 +6,7 @@ export default function ReviewsSection() {
     return (
         <section className="">
             <div className="max-w-screen grid justify-items-center content-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 p-5">
-              <div className="md:w-[60%] lg:w-[60%] flex flex-col justify-center sm:gap-7 p-3">
+              <div className="md:w-full lg:w-[60%] flex flex-col justify-center sm:gap-7 p-3">
                 <div className="">
                   <p className="text-primary">WHAT THEY SAY</p>
                   <h2 className="font-bold text-4xl">What Our Customers Say About Us</h2>
@@ -46,7 +46,7 @@ export default function ReviewsSection() {
                 </div>
               </div>
 
-              <div className="relative order-first md:order-last lg:order-last w-full h-[350px] sm:h-[750px] md:w-[80%] lg:w-[80%] md:h-[568px] lg:h-[568px] bg-transparent rounded-2xl overflow-hidden">
+              <div className="relative order-first md:order-last lg:order-last w-full h-[350px] sm:h-[750px] md:w-full lg:w-[80%] md:h-[568px] lg:h-[568px] bg-transparent rounded-2xl overflow-hidden">
                 <Image src="/images/chef.png" fill={true} alt="About image" className="object-cover" />
               </div>
             </div>

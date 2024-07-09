@@ -17,8 +17,8 @@ export default function CartItems(){
     
     return(
         <div className="bg-[#fff] rounded-lg p-5 my-14">
-            <div className="grid grid-cols-1 md:grid-cols-6 gap-10">
-                <div className="md:col-span-4 lg:col-span-4">
+            <div className="grid grid-cols-1 lg:grid-cols-6 gap-10">
+                <div className="lg:col-span-4">
                     
                     <div className="flex justify-between items-center gap-10">
                         <div className="flex items-center gap-2">
@@ -33,7 +33,7 @@ export default function CartItems(){
                         <button className="text-primary text-sm" onClick={() => clearCart()}> x Clear Cart</button>
                     </div>
 
-                    <div className="hidden md:block lg:block">
+                    <div className="hidden md:hidden lg:block">
                         
                         {
                             cartState.length === 0 ? (
@@ -45,7 +45,7 @@ export default function CartItems(){
                                 </div>
                             ) : cartState.map((item) => (
                                 <div className="my-3" key={item.id}>
-                                    <div className="md:flex lg:flex items-center justify-center gap-2">
+                                    <div className="lg:flex items-center justify-center gap-2">
                                     <div className="flex gap-3">
                                         <input
                                             type="checkbox"
@@ -99,8 +99,8 @@ export default function CartItems(){
                         }
                     </div>
 
-                    {/* For Mobile */}
-                    <div className="block md:hidden lg:hidden">
+                    {/* For Mobile and Tablets */}
+                    <div className="block lg:hidden">
                         {
                             cartState.length === 0 ? (
                                 <div className="flex flex-col justify-center items-center gap-5 my-10">
@@ -111,7 +111,7 @@ export default function CartItems(){
                                 </div>
                             ) : cartState.map((item) => (
                                 <div className="my-3" key={item.id}>
-                                    <div className="flex flex-col items-center justify-center gap-2">
+                                    <div className="flex flex-col items-stretch justify-center gap-2">
                                     <div className="flex gap-3">
                                         <input
                                             type="checkbox"

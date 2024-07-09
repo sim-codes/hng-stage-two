@@ -5,7 +5,7 @@ import { Snacks, Soups, MealsMenu, Swallow,
     Salads, Coffees, Drinks, IceCreams
 } from "@/app/lib/data"
 import OfferSection from "@/app/ui/meals/offerSection"
-import Carousel from "@/app/ui/home/carousel";
+import Carousel from "@/app/ui/carousel";
 
 
 import { Slide } from "@/app/lib/definitons";
@@ -44,7 +44,7 @@ const slides: Array<Slide> = [
 
 export default function Meals() {
     return (
-        <main className="flex flex-col items-center min-h-screen md:px-24 lg:px-24">
+        <main className="flex flex-col items-center min-h-screen md:px-12 lg:px-24">
             <Carousel slides={slides} />
             <SearchSection />
             <SnackSection snacks={Snacks} menu="Snack" />
